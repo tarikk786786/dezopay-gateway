@@ -102,15 +102,17 @@ if (isset($_POST['submit'])) {
     <div class="auth-container">
         <div class="auth-image">
             <div class="left-logo">
-            <img src="" alt="">
+                <div class="brand-icon"><i class="ri-shield-check-line"></i></div>
+                <h3>DEZOPAY</h3>
+                <p>Accept payments through UPI, cards, QR codes, and payment links from one secure dashboard.</p>
             </div>
         </div>
 
         <div class="auth-form">
             <div class="reg-form-div">
                 <img src="<?php echo $site_settings['logo_url']; ?>" alt="Logo" class="logo img-fluid">
-                <h4 class="mb-1">Login <?php echo $site_settings['brand_name']; ?> 🚀</h4>
-                <p class="mb-5">Start Your Journey To Advanced Payments!</p>
+                <h4 class="mb-1">Sign in to your account</h4>
+                <p class="mb-5">Access your merchant dashboard, transactions, and payment settings.</p>
                 <div id="toast-container" class="toast-container"></div>
 
                 <form id="formAuthentication" class="mb-3" action="index.php" method="POST">
@@ -142,8 +144,10 @@ if (isset($_POST['submit'])) {
                     <button class="btn btn-primary w-100" type="submit" id="loginBtn" name="submit">Login</button>
                 </form>
 
-                <p class="text-center">
-                    New on our platform? <a href="../Register" class="text-primary">Create an account</a>
+                <div class="secure-badge"><i class="ri-lock-line"></i> Secured with SSL encryption</div>
+
+                <p class="text-center" style="margin-top:16px">
+                    New to DEZOPAY? <a href="../Register" class="text-primary">Create an account</a>
                 </p>
             </div>
         </div>
