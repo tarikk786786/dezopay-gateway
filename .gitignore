@@ -1,0 +1,53 @@
+# ========================
+# DEZOPAY - .gitignore
+# ========================
+
+# --- SECRETS & CREDENTIALS ---
+.env
+*.env.local
+*.env.production
+*.env.staging
+
+# --- PHP Dependencies ---
+/vendor/
+composer.lock
+
+# --- Logs ---
+/logs/
+*.log
+error_log
+
+# --- Database dumps ---
+*.sql
+
+# --- OS Files ---
+.DS_Store
+Thumbs.db
+Desktop.ini
+*.swp
+*.swo
+*~
+
+# --- IDE / Editor ---
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+.project
+.settings/
+
+# --- ZIP / Archives ---
+*.zip
+*.tar.gz
+*.rar
+
+# --- Uploads & QR codes ---
+/auth/uploads/
+/auth/qrcodes/
+/secret/Qrcode/
+
+# --- User config ---
+.user.ini
+
+# --- Node (if any) ---
+node_modules/

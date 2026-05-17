@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DEZOPAY - Premium UPI Payment Gateway</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Inter',sans-serif;background:#0a0a14;color:#fff;overflow-x:hidden;}
+
+/* ─── HERO LABEL ─── */
+.section-label{text-align:center;padding:32px 0 8px;font-size:12px;letter-spacing:4px;text-transform:uppercase;color:#6c63ff;font-weight:700;}
+
+/* ─── LOGIN SECTION ─── */
+.login-section{
+  min-height:100vh;display:flex;align-items:center;justify-content:center;
+  background:linear-gradient(135deg,#0f0c29,#302b63,#24243e);
+  position:relative;overflow:hidden;
+}
+.login-section::before{
+  content:'';position:absolute;inset:0;
+  background:radial-gradient(ellipse at 20% 50%,rgba(108,99,255,.25) 0%,transparent 60%),
+             radial-gradient(ellipse at 80% 20%,rgba(59,130,246,.2) 0%,transparent 50%);
+}
+.orb{position:absolute;border-radius:50%;filter:blur(80px);animation:float 8s ease-in-out infinite;}
+.orb1{width:400px;height:400px;background:rgba(108,99,255,.2);top:-100px;right:-100px;animation-delay:0s;}
+.orb2{width:300px;height:300px;background:rgba(59,130,246,.15);bottom:-50px;left:-50px;animation-delay:3s;}
+@keyframes float{0%,100%{transform:translateY(0);}50%{transform:translateY(-30px);}}
+
+.login-card{
+  position:relative;z-index:10;width:420px;
+  background:rgba(255,255,255,.05);
+  backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);
+  border:1px solid rgba(255,255,255,.1);
+  border-radius:24px;padding:48px 40px;
+  box-shadow:0 25px 60px rgba(0,0,0,.5),inset 0 1px 0 rgba(255,255,255,.1);
+  animation:slideUp .8s ease-out;
+}
+@keyframes slideUp{from{opacity:0;transform:translateY(40px);}to{opacity:1;transform:translateY(0);}}
+
+.logo-wrap{text-align:center;margin-bottom:32px;}
+.logo-icon{
+  width:64px;height:64px;border-radius:16px;margin:0 auto 16px;display:flex;align-items:center;justify-content:center;
+  background:linear-gradient(135deg,#6c63ff,#3b82f6);
+  box-shadow:0 8px 32px rgba(108,99,255,.4);font-size:28px;
+}
+.brand-name{font-size:28px;font-weight:900;letter-spacing:2px;}
+.brand-name .dezo{color:#fff;}
+.brand-name .pay{color:#6c63ff;}
+.tagline{color:rgba(255,255,255,.5);font-size:13px;margin-top:4px;}
+
+.form-group{margin-bottom:20px;}
+.form-group label{display:block;font-size:13px;font-weight:500;color:rgba(255,255,255,.7);margin-bottom:8px;}
+.form-group input{
+  width:100%;padding:14px 16px;background:rgba(255,255,255,.07);
+  border:1px solid rgba(255,255,255,.1);border-radius:12px;
+  color:#fff;font-size:14px;font-family:'Inter',sans-serif;
+  transition:all .3s;outline:none;
+}
+.form-group input:focus{border-color:#6c63ff;background:rgba(108,99,255,.1);box-shadow:0 0 0 3px rgba(108,99,255,.15);}
+.form-group input::placeholder{color:rgba(255,255,255,.3);}
+.input-wrap{position:relative;}
+.input-wrap input{padding-right:44px;}
+.eye-toggle{position:absolute;right:14px;top:50%;transform:translateY(-50%);cursor:pointer;color:rgba(255,255,255,.4);}
+
+.login-btn{
+  width:100%;padding:16px;border:none;border-radius:12px;cursor:pointer;
+  background:linear-gradient(135deg,#6c63ff,#3b82f6);
+  color:#fff;font-size:15px;font-weight:700;letter-spacing:.5px;
+  transition:all .3s;margin-top:8px;position:relative;overflow:hidden;
+}
+.login-btn:hover{transform:translateY(-2px);box-shadow:0 12px 40px rgba(108,99,255,.5);}
+.login-btn::after{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(135deg,#7c73ff,#4b92f6);opacity:0;transition:.3s;
+}
+.login-btn:hover::after{opacity:1;}
+.login-btn span{position:relative;z-index:1;}
+
+.form-footer{text-align:center;margin-top:24px;font-size:13px;color:rgba(255,255,255,.4);}
+.form-footer a{color:#6c63ff;font-weight:600;}
+
+/* ─── DASHBOARD SECTION ─── */
+.dashboard-section{background:#0d0d1a;padding:0;}
+.db-wrap{display:flex;min-height:100vh;position:relative;}
+
+/* Sidebar */
+.sidebar{
+  width:240px;min-height:100vh;background:linear-gradient(180deg,#12122a,#1a1a35);
+  border-right:1px solid rgba(255,255,255,.06);position:sticky;top:0;height:100vh;overflow-y:auto;
+  box-shadow:4px 0 20px rgba(0,0,0,.3);flex-shrink:0;
+}
+.sb-logo{padding:20px 20px;border-bottom:1px solid rgba(255,255,255,.06);display:flex;align-items:center;gap:12px;}
+.sb-logo-icon{
+  width:36px;height:36px;border-radius:10px;display:flex;align-items:center;justify-content:center;
+  background:linear-gradient(135deg,#6c63ff,#3b82f6);font-size:16px;flex-shrink:0;
+}
+.sb-brand{font-size:18px;font-weight:900;letter-spacing:1.5px;}
+.sb-brand .pay{color:#6c63ff;}
+
+.sb-user{padding:16px 20px;border-bottom:1px solid rgba(255,255,255,.06);}
+.sb-avatar{width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,#6c63ff,#3b82f6);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:16px;}
+.sb-info{margin-top:10px;}
+.sb-name{font-size:13px;font-weight:600;color:#fff;}
+.sb-role{font-size:11px;color:rgba(255,255,255,.4);margin-top:2px;}
+
+.sb-section{padding:8px 12px;margin-top:4px;}
+.sb-section-title{font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.25);padding:12px 8px 6px;}
+.sb-item{
+  display:flex;align-items:center;gap:12px;padding:10px 12px;border-radius:10px;
+  font-size:13px;font-weight:500;color:rgba(255,255,255,.6);
+  cursor:pointer;transition:all .2s;margin-bottom:2px;text-decoration:none;
+}
+.sb-item:hover,.sb-item.active{background:rgba(108,99,255,.15);color:#fff;}
+.sb-item.active{background:linear-gradient(135deg,rgba(108,99,255,.25),rgba(59,130,246,.15));border-left:3px solid #6c63ff;color:#fff;}
+.sb-item i{width:18px;text-align:center;font-size:14px;color:rgba(255,255,255,.4);}
+.sb-item.active i,.sb-item:hover i{color:#6c63ff;}
+.badge-hot{background:#ef4444;color:#fff;font-size:9px;padding:2px 6px;border-radius:20px;font-weight:700;margin-left:auto;}
+
+/* Main content */
+.db-main{flex:1;display:flex;flex-direction:column;overflow:hidden;}
+
+/* Header */
+.db-header{
+  height:56px;background:linear-gradient(90deg,#000,#1a1a1a,#000);
+  border-bottom:1px solid rgba(255,255,255,.06);
+  display:flex;align-items:center;padding:0 24px;gap:16px;
+  position:sticky;top:0;z-index:100;box-shadow:0 4px 20px rgba(0,0,0,.3);
+}
+.hdr-time{font-family:'Courier New',monospace;font-size:13px;font-weight:600;
+  background:linear-gradient(90deg,#6c63ff,#3b82f6);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;}
+.hdr-bal{
+  background:linear-gradient(135deg,#22c55e,#16a34a);color:#fff;
+  padding:7px 16px;border-radius:8px;font-size:13px;font-weight:600;
+  animation:pulse-btn 2s infinite;cursor:pointer;border:none;
+}
+@keyframes pulse-btn{0%,100%{box-shadow:0 0 0 0 rgba(34,197,94,.4);}50%{box-shadow:0 0 0 8px rgba(34,197,94,0);}}
+.hdr-user{display:flex;align-items:center;gap:8px;margin-left:auto;cursor:pointer;}
+.hdr-avatar{width:32px;height:32px;border-radius:50%;background:linear-gradient(135deg,#6c63ff,#3b82f6);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:13px;}
+
+/* DB Content */
+.db-content{padding:24px;flex:1;overflow-y:auto;}
+
+.page-title{font-size:22px;font-weight:800;margin-bottom:6px;}
+.page-title span{background:linear-gradient(135deg,#6c63ff,#3b82f6);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;}
+.page-sub{font-size:13px;color:rgba(255,255,255,.4);margin-bottom:24px;}
+
+/* Stat Cards */
+.stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:24px;}
+.stat-card{
+  border-radius:16px;padding:22px;position:relative;overflow:hidden;
+  transition:all .3s;cursor:default;
+}
+.stat-card:hover{transform:translateY(-4px);box-shadow:0 16px 40px rgba(0,0,0,.4);}
+.stat-card.green{background:linear-gradient(135deg,#064e3b,#065f46);border:1px solid rgba(34,197,94,.2);}
+.stat-card.yellow{background:linear-gradient(135deg,#78350f,#92400e);border:1px solid rgba(234,179,8,.2);}
+.stat-card.red{background:linear-gradient(135deg,#7f1d1d,#991b1b);border:1px solid rgba(239,68,68,.2);}
+.stat-card.blue{background:linear-gradient(135deg,#1e3a5f,#1e40af);border:1px solid rgba(59,130,246,.2);}
+.stat-card::before{
+  content:'';position:absolute;top:-40px;right:-40px;width:120px;height:120px;
+  border-radius:50%;opacity:.15;background:rgba(255,255,255,.3);
+}
+.stat-icon{width:44px;height:44px;border-radius:12px;background:rgba(255,255,255,.15);display:flex;align-items:center;justify-content:center;font-size:18px;margin-bottom:16px;}
+.stat-value{font-size:24px;font-weight:800;margin-bottom:4px;}
+.stat-label{font-size:12px;color:rgba(255,255,255,.6);font-weight:500;}
+.stat-badge{position:absolute;top:16px;right:16px;font-size:11px;font-weight:700;padding:3px 10px;border-radius:20px;background:rgba(255,255,255,.15);}
+
+/* Chart Card */
+.chart-card{
+  background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);
+  border-radius:16px;padding:24px;margin-bottom:20px;
+}
+.chart-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:20px;}
+.chart-title{font-size:15px;font-weight:700;}
+.chart-pills{display:flex;gap:8px;}
+.pill{padding:6px 14px;border-radius:20px;font-size:12px;font-weight:600;cursor:pointer;transition:.2s;}
+.pill.active{background:linear-gradient(135deg,#6c63ff,#3b82f6);color:#fff;}
+.pill:not(.active){background:rgba(255,255,255,.07);color:rgba(255,255,255,.5);}
+.chart-body{height:200px;display:flex;align-items:flex-end;gap:8px;padding:0 8px;}
+.bar-group{flex:1;display:flex;flex-direction:column;align-items:center;gap:4px;}
+.bar{width:100%;border-radius:6px 6px 0 0;transition:all .5s ease;cursor:pointer;}
+.bar:hover{filter:brightness(1.2);}
+.bar-label{font-size:10px;color:rgba(255,255,255,.3);}
+
+/* Status Cards */
+.status-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
+.status-card{
+  background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);
+  border-radius:16px;padding:20px;transition:.3s;
+}
+.status-card:hover{transform:translateY(-3px);border-color:rgba(255,255,255,.12);}
+.status-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;}
+.status-title{font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;}
+.status-pct{font-size:12px;font-weight:700;padding:3px 10px;border-radius:20px;}
+.status-amount{font-size:22px;font-weight:800;margin-bottom:12px;}
+.progress-bar{height:6px;background:rgba(255,255,255,.08);border-radius:3px;overflow:hidden;margin-bottom:8px;}
+.progress-fill{height:100%;border-radius:3px;transition:width 1s ease;}
+.status-footer{font-size:11px;color:rgba(255,255,255,.35);}
+
+/* Animations */
+.fade-in{animation:fadeIn .6s ease forwards;}
+.fade-in-delay-1{animation:fadeIn .6s .1s ease both;}
+.fade-in-delay-2{animation:fadeIn .6s .2s ease both;}
+.fade-in-delay-3{animation:fadeIn .6s .3s ease both;}
+.fade-in-delay-4{animation:fadeIn .6s .4s ease both;}
+@keyframes fadeIn{from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:translateY(0);}}
+
+/* Responsive */
+@media(max-width:1200px){.stats-grid{grid-template-columns:repeat(2,1fr);}}
+</style>
+</head>
+<body>
+
+<!-- ═══ LOGIN SECTION ═══ -->
+<div class="section-label">① LOGIN PAGE</div>
+<div class="login-section">
+  <div class="orb orb1"></div>
+  <div class="orb orb2"></div>
+  <div class="login-card">
+    <div class="logo-wrap">
+      <div class="logo-icon">💳</div>
+      <div class="brand-name"><span class="dezo">DEZO</span><span class="pay">PAY</span></div>
+      <div class="tagline">The Future of UPI Payments</div>
+    </div>
+    <div class="form-group">
+      <label>Mobile Number</label>
+      <input type="text" placeholder="Enter your 10-digit mobile number" maxlength="10">
+    </div>
+    <div class="form-group">
+      <label>Password</label>
+      <div class="input-wrap">
+        <input type="password" placeholder="••••••••••••">
+        <span class="eye-toggle"><i class="fa fa-eye-slash"></i></span>
+      </div>
+    </div>
+    <div style="display:flex;justify-content:space-between;font-size:12px;color:rgba(255,255,255,.4);margin-bottom:20px;">
+      <label style="display:flex;align-items:center;gap:6px;cursor:pointer;"><input type="checkbox" style="accent-color:#6c63ff"> Accept Terms &amp; Conditions</label>
+      <a href="#" style="color:#6c63ff;text-decoration:none;">Forgot Password?</a>
+    </div>
+    <button class="login-btn"><span>🚀 Login to DEZOPAY</span></button>
+    <div class="form-footer">New here? <a href="#">Create an account</a></div>
+  </div>
+</div>
+
+<!-- ═══ DASHBOARD SECTION ═══ -->
+<div class="section-label" style="background:#0d0d1a;padding-top:40px;">② DASHBOARD</div>
+<div class="dashboard-section">
+  <div class="db-wrap">
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <div class="sb-logo">
+        <div class="sb-logo-icon">💳</div>
+        <div class="sb-brand">DEZO<span class="pay">PAY</span></div>
+      </div>
+      <div class="sb-user">
+        <div style="display:flex;align-items:center;gap:10px;">
+          <img src="https://i.ibb.co/PZbGXpXM/Chat-GPT-Image-May-16-2026-01-27-32-PM.png" style="width:40px;height:40px;border-radius:50%;object-fit:cover;border:2px solid #6c63ff;">
+          <div>
+            <div class="sb-name">Tarik Ahmed</div>
+            <div class="sb-role">API Developer</div>
+          </div>
+        </div>
+      </div>
+      <div class="sb-section">
+        <div class="sb-section-title">Main Menu</div>
+        <a class="sb-item active" href="#"><i class="fa fa-th-large"></i> Dashboard <small style="margin-left:auto;font-size:10px;color:rgba(255,255,255,.3)">v8.6</small></a>
+        <a class="sb-item" href="#"><i class="fa fa-exchange-alt"></i> Transactions</a>
+        <a class="sb-item" href="#"><i class="fa fa-tags"></i> Subscription</a>
+        <a class="sb-item" href="#"><i class="fa fa-shopping-cart"></i> Checkout <span class="badge-hot">HOT</span></a>
+        <div class="sb-section-title">Developer</div>
+        <a class="sb-item" href="#"><i class="fa fa-globe"></i> IP Settings</a>
+        <a class="sb-item" href="#"><i class="fa fa-code"></i> API Details</a>
+        <a class="sb-item" href="#"><i class="fa fa-link"></i> Integration</a>
+        <div class="sb-section-title">Account</div>
+        <a class="sb-item" href="#"><i class="fa fa-user"></i> Profile</a>
+        <a class="sb-item" href="#"><i class="fa fa-cog"></i> Settings</a>
+        <a class="sb-item" href="#" style="color:#ef4444;"><i class="fa fa-sign-out-alt" style="color:#ef4444;"></i> Logout</a>
+      </div>
+    </div>
+
+    <!-- Main -->
+    <div class="db-main">
+      <!-- Header -->
+      <div class="db-header">
+        <button style="background:none;border:none;color:rgba(255,255,255,.6);font-size:20px;cursor:pointer;"><i class="fa fa-bars"></i></button>
+        <div class="hdr-time" id="clock">12:34:56 PM</div>
+        <div style="margin-left:auto;display:flex;align-items:center;gap:12px;">
+          <button class="hdr-bal">💰 Balance: ₹24,500.00</button>
+          <div class="hdr-user">
+            <img src="https://i.ibb.co/PZbGXpXM/Chat-GPT-Image-May-16-2026-01-27-32-PM.png" style="width:32px;height:32px;border-radius:50%;object-fit:cover;border:2px solid #6c63ff;">
+            <span style="font-size:13px;color:rgba(255,255,255,.7);">Developer</span>
+            <i class="fa fa-angle-down" style="color:rgba(255,255,255,.4);font-size:12px;"></i>
+          </div>
+        </div>
+      </div>
+
+      <!-- Content -->
+      <div class="db-content">
+        <div class="page-title fade-in">Payment <span>Analytics</span> Dashboard</div>
+        <div class="page-sub fade-in">Welcome back, Tarik! Here's your payment overview for today.</div>
+
+        <!-- Stat Cards -->
+        <div class="stats-grid">
+          <div class="stat-card green fade-in-delay-1">
+            <div class="stat-icon">✅</div>
+            <div class="stat-value">₹1,24,590</div>
+            <div class="stat-label">Today's Success</div>
+            <div class="stat-badge">+12%</div>
+          </div>
+          <div class="stat-card yellow fade-in-delay-2">
+            <div class="stat-icon">⏳</div>
+            <div class="stat-value">₹8,340</div>
+            <div class="stat-label">Today's Pending</div>
+            <div class="stat-badge">342 txns</div>
+          </div>
+          <div class="stat-card red fade-in-delay-3">
+            <div class="stat-icon">❌</div>
+            <div class="stat-value">₹3,210</div>
+            <div class="stat-label">Today's Failed</div>
+            <div class="stat-badge">2.1%</div>
+          </div>
+          <div class="stat-card blue fade-in-delay-4">
+            <div class="stat-icon">📊</div>
+            <div class="stat-value">₹9,84,300</div>
+            <div class="stat-label">Monthly Billing</div>
+            <div class="stat-badge">99.9%</div>
+          </div>
+        </div>
+
+        <!-- Chart -->
+        <div class="chart-card fade-in">
+          <div class="chart-header">
+            <div class="chart-title">📈 Payment Distribution (Last 7 Days)</div>
+            <div class="chart-pills">
+              <div class="pill active">By Status</div>
+              <div class="pill">By Method</div>
+              <div class="pill">Monthly</div>
+            </div>
+          </div>
+          <div class="chart-body" id="barChart"></div>
+        </div>
+
+        <!-- Status Cards -->
+        <div class="status-grid">
+          <div class="status-card">
+            <div class="status-head">
+              <div class="status-title" style="color:#22c55e;">✅ Success</div>
+              <div class="status-pct" style="background:rgba(34,197,94,.15);color:#22c55e;">87.4%</div>
+            </div>
+            <div class="status-amount">₹1,24,590</div>
+            <div class="progress-bar"><div class="progress-fill" style="width:87%;background:linear-gradient(90deg,#22c55e,#16a34a);"></div></div>
+            <div class="status-footer">1,247 transactions today</div>
+          </div>
+          <div class="status-card">
+            <div class="status-head">
+              <div class="status-title" style="color:#eab308;">⏳ Pending</div>
+              <div class="status-pct" style="background:rgba(234,179,8,.15);color:#eab308;">10.5%</div>
+            </div>
+            <div class="status-amount">₹8,340</div>
+            <div class="progress-bar"><div class="progress-fill" style="width:10%;background:linear-gradient(90deg,#eab308,#ca8a04);"></div></div>
+            <div class="status-footer">342 transactions today</div>
+          </div>
+          <div class="status-card">
+            <div class="status-head">
+              <div class="status-title" style="color:#ef4444;">❌ Failed</div>
+              <div class="status-pct" style="background:rgba(239,68,68,.15);color:#ef4444;">2.1%</div>
+            </div>
+            <div class="status-amount">₹3,210</div>
+            <div class="progress-bar"><div class="progress-fill" style="width:2%;background:linear-gradient(90deg,#ef4444,#dc2626);"></div></div>
+            <div class="status-footer">68 transactions today</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+// Live Clock
+function tick(){
+  const n=new Date();
+  let h=n.getHours(),m=n.getMinutes(),s=n.getSeconds(),a=h>=12?'PM':'AM';
+  h=h%12||12;
+  document.getElementById('clock').textContent=
+    String(h).padStart(2,'0')+':'+String(m).padStart(2,'0')+':'+String(s).padStart(2,'0')+' '+a;
+}
+setInterval(tick,1000);tick();
+
+// Bar Chart
+const bars=[
+  {label:'Mon',s:78,p:12,f:10},
+  {label:'Tue',s:85,p:9,f:6},
+  {label:'Wed',s:92,p:5,f:3},
+  {label:'Thu',s:70,p:18,f:12},
+  {label:'Fri',s:88,p:8,f:4},
+  {label:'Sat',s:95,p:3,f:2},
+  {label:'Sun',s:87,p:10,f:3},
+];
+const bc=document.getElementById('barChart');
+bars.forEach(d=>{
+  const max=200;
+  bc.innerHTML+=`
+  <div class="bar-group">
+    <div class="bar" style="height:${d.f/100*max*0.3}px;background:#ef4444;opacity:.7;"></div>
+    <div class="bar" style="height:${d.p/100*max*0.6}px;background:#eab308;opacity:.8;"></div>
+    <div class="bar" style="height:${d.s/100*max}px;background:linear-gradient(180deg,#22c55e,#16a34a);"></div>
+    <div class="bar-label">${d.label}</div>
+  </div>`;
+});
+</script>
+</body>
+</html>
