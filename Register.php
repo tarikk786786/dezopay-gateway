@@ -90,29 +90,112 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 ?>
 <!DOCTYPE html>
-
-<html>
-
+<html lang="en">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title><?php echo $site_settings['brand_name'] ?? 'DEZOPAY'; ?> | Registration</title>
+    <link rel="icon" href="https://pay.dezo.in/common/img/logoshild.png">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+    
+    <!-- SweetAlert2 & Tailwind -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Inter', 'sans-serif'] },
+                    colors: { brand: { 400: '#8b84ff', 500: '#6c63ff', 600: '#534bea' }, accent: '#3b82f6' }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Disable DevTools -->
+    <script disable-devtool-auto="" src="https://cdn.jsdelivr.net/npm/disable-devtool@0.3.8/disable-devtool.min.js"></script>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 
-<title><?php echo $site_settings['brand_name']; ?> | Registration</title>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script> 
-    <?php echo "<link rel=\"icon\" href=\"https://{$server}/common/img/logoshild.png\">"; ?>
-    <!--<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>-->
-<!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Remix Icons -->
-    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="../common/assets/vendor/css/pages/page-auth.css">
-<script disable-devtool-auto="" src="https://cdn.jsdelivr.net/npm/disable-devtool@0.3.8/disable-devtool.min.js" data-url="https://www.google.com/"></script>
-<!--<script src="https://<?=$server?>/dev-script.js"></script>-->
-<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <style>
+        body {
+            background: #0a0a14;
+            color: #fff;
+            overflow-x: hidden;
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .login-section {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+            position: relative;
+            overflow: hidden;
+            padding: 40px 20px;
+        }
+        .login-section::before {
+            content: ''; position: absolute; inset: 0;
+            background: radial-gradient(ellipse at 20% 50%, rgba(108,99,255,.25) 0%, transparent 60%),
+                        radial-gradient(ellipse at 80% 20%, rgba(59,130,246,.2) 0%, transparent 50%);
+        }
+        .orb { position: absolute; border-radius: 50%; filter: blur(80px); animation: float 8s ease-in-out infinite; }
+        .orb1 { width: 400px; height: 400px; background: rgba(108,99,255,.2); top: -100px; right: -100px; }
+        .orb2 { width: 300px; height: 300px; background: rgba(59,130,246,.15); bottom: -50px; left: -50px; animation-delay: 3s; }
+        
+        @keyframes float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-30px); } }
+        
+        .login-card {
+            position: relative; z-index: 10; width: 100%; max-width: 500px; margin: 0 auto;
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 24px; padding: 48px 40px;
+            box-shadow: 0 25px 60px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.1);
+            animation: slideUp 0.8s ease-out;
+        }
+        @keyframes slideUp { from { opacity: 0; transform: translateY(40px); } to { opacity: 1; transform: translateY(0); } }
+        
+        .logo-icon {
+            width: 64px; height: 64px; border-radius: 16px; margin: 0 auto 16px;
+            display: flex; align-items: center; justify-content: center;
+            background: linear-gradient(135deg, #6c63ff, #3b82f6);
+            box-shadow: 0 8px 32px rgba(108,99,255,0.4); font-size: 28px;
+        }
+        
+        .form-input {
+            width: 100%; padding: 14px 16px; background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1); border-radius: 12px;
+            color: #fff; font-size: 14px; transition: all 0.3s; outline: none;
+        }
+        .form-input:focus {
+            border-color: #6c63ff; background: rgba(108,99,255,0.1);
+            box-shadow: 0 0 0 3px rgba(108,99,255,0.15);
+        }
+        .form-input::placeholder { color: rgba(255,255,255,0.3); }
+        
+        .login-btn {
+            width: 100%; padding: 16px; border: none; border-radius: 12px; cursor: pointer;
+            background: linear-gradient(135deg, #6c63ff, #3b82f6);
+            color: #fff; font-size: 15px; font-weight: 700; letter-spacing: 0.5px;
+            transition: all 0.3s; position: relative; overflow: hidden;
+        }
+        .login-btn:hover { transform: translateY(-2px); box-shadow: 0 12px 40px rgba(108,99,255,0.5); }
+        .login-btn:disabled { opacity: 0.7; cursor: not-allowed; transform: none; box-shadow: none; }
+        
+        .swal2-popup {
+            background: #1a1a2e !important;
+            border: 1px solid rgba(255,255,255,0.1);
+            color: white !important;
+            border-radius: 16px !important;
+        }
+        .swal2-title { color: white !important; }
+        .swal2-html-container { color: rgba(255,255,255,0.7) !important; }
+    </style>
 </head>
-
-
 
  <?php
 if (isset($_GET['referral_code'])) {
@@ -264,9 +347,9 @@ $msg = "Dear $name thanks For Registering Us
 Your Username = $mobile
 Your Password = $password
 Thanks & Regards
-*UpiGateway™*";
+*DEZOPAY™*";
 // sendWA($mobile,$encodedMsg);
-sendNotification($mobile, $email, $msg, "Well-Come To UpiGateway Family");
+sendNotification($mobile, $email, $msg, "Well-Come To DEZOPAY Family");
 // Fetch plans from the database
 $sql = "SELECT id, plan_name, amount, expiry FROM subscription_plan";
 $result = $conn->query($sql);
@@ -392,13 +475,13 @@ $msg = "Dear $name thanks For Registering Us
 Your Username = $mobile
 Your Password = $password
 Thanks & Regards
-*UpiGateway™*";
+*DEZOPAY™*";
 
 
 $encodedMsg = urlencode($msg);
 
 // sendWA($mobile,$encodedMsg);
-sendNotification($mobile, $email, $msg, "Well-Come To UpiGateway Family");
+sendNotification($mobile, $email, $msg, "Well-Come To DEZOPAY Family");
 
 echo '
     <script>
@@ -432,171 +515,149 @@ exit;
 }
 ?>
 <body>
-    <div class="auth-container">
-        <!-- Left Image Section -->
-        <div class="auth-image">
-            <div class="left-logo">
-            <img src="../common/img/logoshild.png" alt="logo">
+    <div class="login-section">
+        <div class="orb orb1"></div>
+        <div class="orb orb2"></div>
+        
+        <div class="login-card">
+            <div class="text-center mb-8">
+                <div class="logo-icon"><i class="fa-solid fa-user-plus"></i></div>
+                <div class="text-3xl font-black tracking-widest uppercase mb-1">
+                    <span class="text-white">DEZO</span><span class="text-brand-500">PAY</span>
+                </div>
+                <div class="text-sm text-gray-400">Create your merchant account</div>
             </div>
-        </div>
 
-        <!-- Register Form Section -->
-        <div class="auth-form">
-            <div class="reg-form-div">
-                <img src="<?php echo $site_settings['logo_url']; ?>" alt="Logo" class="logo img-fluid">
-                <h4 class="mb-1">Register <?php echo $site_settings['brand_name']; ?> 🚀</h4>
-                <p class="mb-5">Start Your Journey To Advanced Payments!</p>
-                <div id="toast-container" class="toast-container"></div>
-                <form class="mb-5" method="POST" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" onsubmit="return validateForm()">
-                    <div class="form-floating form-floating-outline mb-5">
-                        <input type="text" class="form-control" id="username" name="name" placeholder="Enter your Name" 
-                               pattern="[A-Za-z\s]+" title="Only letters and spaces allowed" required autofocus onkeyup="checkInitialFields(); validateName()">
-                        <label for="username">Name</label>
-                        <div id="name-warning" class="text-danger mt-1"></div>
+            <div id="toast-container" class="toast-container"></div>
+            
+            <form method="POST" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" onsubmit="return validateForm()">
+                <div class="mb-5">
+                    <label class="block text-[13px] font-medium text-gray-400 mb-2">Name</label>
+                    <input type="text" id="username" name="name" class="form-input" placeholder="Enter your Name" pattern="[A-Za-z\s]+" title="Only letters and spaces allowed" required autofocus onkeyup="checkInitialFields(); validateName()">
+                    <div id="name-warning" class="text-red-400 text-xs mt-1"></div>
+                </div>
+                
+                <div class="mb-5">
+                    <label class="block text-[13px] font-medium text-gray-400 mb-2">Mobile Number</label>
+                    <input type="number" id="Number" name="mobile" class="form-input" placeholder="Enter your 10-digit Mobile Number" pattern="[0-9]{10}" title="Enter exactly 10 digits" oninput="this.value = this.value.replace(/[^0-9]/g, '').slice(0, 10);" required onkeyup="checkInitialFields(); validateMobile()">
+                    <div id="mobile-warning" class="text-red-400 text-xs mt-1"></div>
+                </div>
+
+                <div class="mb-5" id="otpDiv" style="display: none;">
+                    <label class="block text-[13px] font-medium text-gray-400 mb-2">OTP</label>
+                    <div class="flex gap-2">
+                        <input type="number" id="otp" name="otp" class="form-input flex-1" placeholder="Enter 6-digit OTP" oninput="this.value = this.value.replace(/[^0-9]/g, '').slice(0, 6);" required onkeyup="validateOTP()">
+                        <button type="button" class="px-4 py-2 bg-brand-500 hover:bg-brand-600 text-white rounded-xl text-sm font-semibold transition-colors" onclick="verifyOTP()">Verify</button>
+                    </div>
+                    <div id="otp-warning" class="text-red-400 text-xs mt-1"></div>
+                    <div class="flex justify-between items-center mt-2">
+                        <div class="text-xs text-gray-400">OTP sent on WhatsApp. Support: 9876543210</div>
+                        <button type="button" id="resendBtn" class="text-brand-400 text-xs hover:text-brand-300 font-semibold disabled:opacity-50 disabled:cursor-not-allowed" onclick="resendOTP()" disabled>Resend OTP</button>
+                    </div>
+                    <div id="resend-message" class="text-xs text-gray-400 mt-1 text-right"></div>
+                </div>
+                
+                <div id="hiddenFields" style="display: none;">
+                    <div class="mb-5">
+                        <label class="block text-[13px] font-medium text-gray-400 mb-2">Email Id</label>
+                        <input type="email" id="email" name="email" class="form-input" placeholder="Enter your email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="Enter a valid email address" required onkeyup="validateEmail()">
+                        <div id="email-warning" class="text-red-400 text-xs mt-1"></div>
                     </div>
                     
-                    <div class="form-floating form-floating-outline mb-5">
-                        <input type="number" class="form-control" id="Number" name="mobile" placeholder="Enter your Number" 
-                               pattern="[0-9]{10}" title="Enter exactly 10 digits" 
-                               oninput="this.value = this.value.replace(/[^0-9]/g, '').slice(0, 10);" required autofocus onkeyup="checkInitialFields(); validateMobile()">
-                        <label for="Number">Mobile Number</label>
-                        <div id="mobile-warning" class="text-danger mt-1"></div>
-                    </div>
-
-                    <div class="form-floating form-floating-outline mb-5" id="otpDiv" style="display: none;">
-                        <input type="number" class="form-control" id="otp" name="otp" placeholder="Enter OTP" 
-                               oninput="this.value = this.value.replace(/[^0-9]/g, '').slice(0, 6);" required onkeyup="validateOTP()">
-                        <label for="otp">OTP</label>
-                        <div id="otp-warning" class="text-danger mt-1"></div>
-                        <button type="button" class="btn btn-primary mt-2" onclick="verifyOTP()">Verify OTP</button>
-                        <button type="button" class="btn btn-secondary mt-2" id="resendBtn" onclick="resendOTP()" disabled>Resend OTP</button>
-                        <div id="resend-message" class="mt-2" style="font-size: 12px;"></div>
-                        <div class="mt-2" style="font-size: 12px;">OTP sent on WhatsApp. If not received, contact support on 9876543210.</div>
+                    <div class="mb-5">
+                        <label class="block text-[13px] font-medium text-gray-400 mb-2">Company Name</label>
+                        <input type="text" id="company" name="company" class="form-input" placeholder="Enter your Company Name" required>
                     </div>
                     
-                    <div id="hiddenFields" style="display: none;">
-                        <div class="form-floating form-floating-outline mb-5">
-                            <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email" 
-                                   pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="Enter a valid email address" required onkeyup="validateEmail()">
-                            <label for="email">Email Id</label>
-                            <div id="email-warning" class="text-danger mt-1"></div>
+                    <div class="mb-5">
+                        <label class="block text-[13px] font-medium text-gray-400 mb-2">Aadhaar Number</label>
+                        <input type="number" id="aadhar" name="aadhaar" class="form-input" placeholder="Enter your 12-digit Aadhaar Number" pattern="[0-9]{12}" title="Enter exactly 12 digits" oninput="this.value = this.value.replace(/[^0-9]/g, '').slice(0, 12);" required onkeyup="validateAadhaar()">
+                        <div id="aadhaar-warning" class="text-red-400 text-xs mt-1"></div>
+                    </div>
+                    
+                    <div class="mb-5">
+                        <label class="block text-[13px] font-medium text-gray-400 mb-2">PAN Number</label>
+                        <input type="text" id="pan" name="pan" class="form-input uppercase" placeholder="Enter your PAN Number" pattern="[A-Z]{5}[0-9]{4}[A-Z]{1}" title="Enter valid PAN (e.g., ABCDE1234F)" maxlength="10" oninput="this.value = this.value.toUpperCase();" required onkeyup="validatePAN()">
+                        <div id="pan-warning" class="text-red-400 text-xs mt-1"></div>
+                    </div>
+                    
+                    <div class="grid grid-cols-2 gap-4 mb-5">
+                        <div>
+                            <label class="block text-[13px] font-medium text-gray-400 mb-2">Location</label>
+                            <input type="text" id="location" name="location" class="form-input" placeholder="City/State" required>
                         </div>
-                        
-                        <div class="form-floating form-floating-outline mb-5">
-                            <input type="text" class="form-control" id="company" name="company" placeholder="Enter your Company Name" required>
-                            <label for="company">Company Name</label>
+                        <div>
+                            <label class="block text-[13px] font-medium text-gray-400 mb-2">Pincode</label>
+                            <input type="number" id="pin" name="pin" class="form-input" placeholder="6 digits" pattern="[0-9]{6}" title="Enter exactly 6 digits" oninput="this.value = this.value.replace(/[^0-9]/g, '').slice(0, 6);" required onkeyup="validatePin()">
+                            <div id="pin-warning" class="text-red-400 text-xs mt-1"></div>
                         </div>
-                        
-                        <div class="form-floating form-floating-outline mb-5">
-                            <input type="number" class="form-control" id="aadhar" name="aadhaar" placeholder="Enter your Aadhaar Number" 
-                                   pattern="[0-9]{12}" title="Enter exactly 12 digits" 
-                                   oninput="this.value = this.value.replace(/[^0-9]/g, '').slice(0, 12);" required onkeyup="validateAadhaar()">
-                            <label for="aadhar">Aadhaar Number</label>
-                            <div id="aadhaar-warning" class="text-danger mt-1"></div>
+                    </div>
+                    
+                    <div class="mb-5">
+                        <label class="block text-[13px] font-medium text-gray-400 mb-2">Password</label>
+                        <div class="relative">
+                            <input type="password" id="password" name="password" class="form-input pr-12" placeholder="••••••••••••" onkeyup="checkPasswordStrength()" required>
+                            <span id="togglePassword" class="absolute right-4 top-1/2 -translate-y-1/2 cursor-pointer text-gray-400 hover:text-white transition-colors">
+                                <i class="fa-solid fa-eye-slash"></i>
+                            </span>
                         </div>
-                        
-                        <div class="form-floating form-floating-outline mb-5">
-                            <input type="text" class="form-control" id="pan" name="pan" placeholder="Enter your Pan Number" 
-                                   pattern="[A-Z]{5}[0-9]{4}[A-Z]{1}" title="Enter valid PAN (e.g., ABCDE1234F)" 
-                                   maxlength="10" oninput="this.value = this.value.toUpperCase();" required onkeyup="validatePAN()">
-                            <label for="pan">Pan Number</label>
-                            <div id="pan-warning" class="text-danger mt-1"></div>
-                        </div>
-                        
-                        <div class="form-floating form-floating-outline mb-5">
-                            <input type="text" class="form-control" id="location" name="location" placeholder="Enter your Location" required autofocus>
-                            <label for="location">Location</label>
-                        </div>
-                        
-                        <div class="form-floating form-floating-outline mb-5">
-                            <input type="number" class="form-control" id="pin" name="pin" placeholder="Enter your Pincode" 
-                                   pattern="[0-9]{6}" title="Enter exactly 6 digits" 
-                                   oninput="this.value = this.value.replace(/[^0-9]/g, '').slice(0, 6);" required autofocus onkeyup="validatePin()">
-                            <label for="pin">Pincode</label>
-                            <div id="pin-warning" class="text-danger mt-1"></div>
-                        </div>
+                        <div id="password-strength" class="text-xs font-semibold mt-2"></div>
+                    </div>
+                    
+                    <div class="mb-5 flex items-center">
+                        <label class="flex items-center gap-2 cursor-pointer hover:text-gray-300 transition-colors text-[13px] text-gray-400">
+                            <input type="checkbox" id="use_referral" name="use_referral" class="w-4 h-4 accent-brand-500 rounded bg-gray-800 border-gray-700" onchange="toggleReferralInput(this)">
+                            <span>Apply Referral Code</span>
+                        </label>
+                    </div>
 
-                        <div class="mb-5 form-password-toggle">
-                            <div class="input-group input-group-merge">
-                                <div class="form-floating form-floating-outline">
-                                    <input type="password" id="password" class="form-control" name="password" 
-                                           placeholder="••••••••••••" aria-describedby="password" 
-                                           onkeyup="checkPasswordStrength()" required />
-                                    <label for="password">Password</label>
-                                </div>
-                                <span class="input-group-text cursor-pointer" id="togglePassword">
-                                    <i class="ri-eye-off-line ri-20px"></i>
-                                </span>
-                            </div>
-                            <div id="password-strength" class="mt-2"></div>
-                        </div>
-
-                        <div class="mb-5 form-check">
-                            <input class="form-check-input" type="checkbox" id="use_referral" name="use_referral" onchange="toggleReferralInput(this)">
-                            <label class="form-check-label" for="use_referral">Apply Referral Code</label>
-                        </div>
-
-                        <div id="referralCodeContainer" style="display: none;">
-                            <div class="form-floating form-floating-outline mb-5">
-                                <input type="text" id="referral_code" class="form-control" name="referral_code" 
-                                       placeholder="Referral Code (Optional)" onkeyup="validateReferral()">
-                                <label for="referral_code">Referral Code</label>
-                                <div id="referral-warning" class="text-danger mt-1"></div>
-                            </div>
-                        </div>
+                    <div id="referralCodeContainer" class="mb-5" style="display: none;">
+                        <label class="block text-[13px] font-medium text-gray-400 mb-2">Referral Code</label>
+                        <input type="text" id="referral_code" name="referral_code" class="form-input uppercase" placeholder="Referral Code (Optional)" onkeyup="validateReferral()">
+                        <div id="referral-warning" class="text-red-400 text-xs mt-1"></div>
+                    </div>
+                    
+                    <div class="mb-5 flex justify-center">
                         <div class="g-recaptcha" data-sitekey="6Le_GvAqAAAAAPAhNpadyjfYK_GoY24yVf77kYhC" required></div>
-                        <div class="mb-5 py-2">
-                            <div class="form-check mb-0">
-                                <input class="form-check-input" type="checkbox" id="terms-conditions" name="terms" required>
-                                <label class="form-check-label" for="terms-conditions">
-                                    I agree to <a href="javascript:void(0);">privacy policy & terms</a>
-                                </label>
-                            </div>
-                        </div>
-                        
-                        <button type="submit" name="create" class="btn btn-primary d-grid w-100">Sign up</button>
                     </div>
-                </form>
+
+                    <div class="mb-6">
+                        <label class="flex items-center gap-2 cursor-pointer hover:text-gray-300 transition-colors text-[13px] text-gray-400">
+                            <input type="checkbox" id="terms-conditions" name="terms" class="w-4 h-4 accent-brand-500 rounded bg-gray-800 border-gray-700" required>
+                            <span>I agree to <a href="javascript:void(0);" class="text-brand-400 hover:text-brand-300 font-semibold transition-colors">privacy policy & terms</a></span>
+                        </label>
+                    </div>
+                    
+                    <button type="submit" name="create" id="registerBtn" class="login-btn mb-6">
+                        <span id="btnText"><i class="fa-solid fa-user-check mr-2"></i> Sign up</span>
+                    </button>
+                </div>
+            </form>
+
+            <div class="text-center text-[13px] text-gray-400">
+                Already have an account? <a href="auth/index.php" class="text-brand-400 hover:text-brand-300 font-semibold transition-colors">Sign in instead</a>
             </div>
-<p class="text-center mb-5">
-<span>Already have an account?</span>
-<a href="auth/index">
-<span>Sign in instead</span>
-  </a>
-</p>
+            
+            <div class="mt-8 flex items-center justify-center gap-2 text-[11px] text-gray-500 font-medium">
+                <i class="fa-solid fa-shield-halved"></i>
+                <span>Secured with 256-bit SSL encryption</span>
+            </div>
         </div>
     </div>
 
-    <!-- Theme Toggle Button -->
-    <button class="theme-toggle" id="themeToggle" title="Toggle Theme">
-        <i class="ri-sun-line"></i> <!-- Default light theme, so sun icon -->
-    </button>
 <script>
-// Theme Toggle Logic
-        const themeToggle = document.getElementById('themeToggle');
-        const body = document.body;
-        themeToggle.addEventListener('click', () => {
-            body.classList.toggle('light-theme');
-            const icon = themeToggle.querySelector('i');
-            if (body.classList.contains('light-theme')) {
-                icon.classList.replace('ri-sun-line', 'ri-moon-line');
-            } else {
-                icon.classList.replace('ri-moon-line', 'ri-sun-line');
-            }
-        });
-
-        // Password Toggle
-        document.getElementById('togglePassword').addEventListener('click', function() {
-            const password = document.getElementById('password');
-            const icon = this.querySelector('i');
-            if (password.type === 'password') {
-                password.type = 'text';
-                icon.classList.replace('ri-eye-off-line', 'ri-eye-line');
-            } else {
-                password.type = 'password';
-                icon.classList.replace('ri-eye-line', 'ri-eye-off-line');
-            }
-        });
+    // Password Toggle
+    document.getElementById('togglePassword').addEventListener('click', function() {
+        const password = document.getElementById('password');
+        const icon = this.querySelector('i');
+        if (password.type === 'password') {
+            password.type = 'text';
+            icon.classList.replace('fa-eye-slash', 'fa-eye');
+        } else {
+            password.type = 'password';
+            icon.classList.replace('fa-eye', 'fa-eye-slash');
+        }
+    });
     // URL से referral code निकालने का function
 function getReferralCode() {
     const urlParams = new URLSearchParams(window.location.search);

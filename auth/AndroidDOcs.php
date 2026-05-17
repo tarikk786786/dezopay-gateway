@@ -1,13 +1,13 @@
 <?php
 // AndroidDOcs.php
 // Version: 1.3 | Last Updated: May 23, 2025
-// A comprehensive guide for integrating the UpiGateway payment page into an Android app using Chrome Custom Tabs across Flutter, Java, Kotlin, and Cordova
+// A comprehensive guide for integrating the DEZOPAY payment page into an Android app using Chrome Custom Tabs across Flutter, Java, Kotlin, and Cordova
 
 include 'header.php'; // Ensure header.php exists and has no syntax errors
 ?>
 
 <head>
-    <title>UpiGateway Integration Documentation (v1.3)</title>
+    <title>DEZOPAY Integration Documentation (v1.3)</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
@@ -107,7 +107,7 @@ include 'header.php'; // Ensure header.php exists and has no syntax errors
 
         <!-- Header Section -->
         <header class="text-center mb-10">
-            <h1 class="text-4xl font-bold text-blue-900">UpiGateway Payment Integration Guide</h1>
+            <h1 class="text-4xl font-bold text-blue-900">DEZOPAY Payment Integration Guide</h1>
             <p class="text-lg text-gray-600 mt-3">Version 1.3 | Last Updated: May 23, 2025</p>
         </header>
 
@@ -128,21 +128,21 @@ include 'header.php'; // Ensure header.php exists and has no syntax errors
         <!-- Objective Section -->
         <div class="section" id="objective">
             <h2>Objective</h2>
-            <p>This guide provides a comprehensive walkthrough for integrating the UpiGateway UPI-based payment page into an Android application using Chrome Custom Tabs across Flutter, Java, Kotlin, and Cordova platforms. The goal is to ensure seamless functionality for all interactive elements, including QR code scanning, UPI app payments, payment status updates, file downloads, and redirects, with minimal configuration.</p>
+            <p>This guide provides a comprehensive walkthrough for integrating the DEZOPAY UPI-based payment page into an Android application using Chrome Custom Tabs across Flutter, Java, Kotlin, and Cordova platforms. The goal is to ensure seamless functionality for all interactive elements, including QR code scanning, UPI app payments, payment status updates, file downloads, and redirects, with minimal configuration.</p>
             <div class="highlight">
-                <p><strong>Target Page:</strong> The payment page is a UPI-based gateway by UpiGateway, accessible at a unique URL (e.g., <code>https://pay.dezo.in/payment/instant-pay/...</code>), supporting payments via QR code, UPI apps, or Paytm.</p>
+                <p><strong>Target Page:</strong> The payment page is a UPI-based gateway by DEZOPAY, accessible at a unique URL (e.g., <code>https://pay.dezo.in/payment/instant-pay/...</code>), supporting payments via QR code, UPI apps, or Paytm.</p>
             </div>
         </div>
 
         <!-- Preview Section -->
         <div class="section" id="preview">
             <h2>Preview of the Payment Page</h2>
-            <p>The UpiGateway payment page is a mobile-friendly interface designed for UPI payments. Below is a visual representation of the page to be integrated into your Android app via Chrome Custom Tabs.</p>
-            <img src="/assets/img/page.png" alt="UpiGateway Payment Page Preview" class="preview-img">
-            <p class="text-sm text-gray-600 text-center mt-2">Figure 1: UpiGateway Payment Page with QR Code, UPI Options, and Payment Status</p>
+            <p>The DEZOPAY payment page is a mobile-friendly interface designed for UPI payments. Below is a visual representation of the page to be integrated into your Android app via Chrome Custom Tabs.</p>
+            <img src="/assets/img/page.png" alt="DEZOPAY Payment Page Preview" class="preview-img">
+            <p class="text-sm text-gray-600 text-center mt-2">Figure 1: DEZOPAY Payment Page with QR Code, UPI Options, and Payment Status</p>
             <p><strong>Key Elements:</strong></p>
             <ul class="list-disc pl-5 text-gray-700">
-                <li><strong>Header:</strong> "Paying To UpiGateway" with UPI logo.</li>
+                <li><strong>Header:</strong> "Paying To DEZOPAY" with UPI logo.</li>
                 <li><strong>QR Code:</strong> Scannable via UPI apps (Google Pay, PhonePe, Paytm, BHIM).</li>
                 <li><strong>Payment Amount:</strong> Displays the amount to be paid (e.g., ₹1.00).</li>
                 <li><strong>Buttons:</strong>
@@ -156,7 +156,7 @@ include 'header.php'; // Ensure header.php exists and has no syntax errors
                 </li>
                 <li><strong>Progress Bar:</strong> Countdown timer (e.g., "Waiting For Payment: 04:59") with live status updates via JavaScript.</li>
                 <li><strong>Cancel Button:</strong> Redirects to a cancellation URL.</li>
-                <li><strong>Footer:</strong> "Powered by UpiGateway™".</li>
+                <li><strong>Footer:</strong> "Powered by DEZOPAY™".</li>
             </ul>
             <div class="highlight">
                 <p><strong>Note:</strong> Chrome Custom Tabs leverage Chrome's rendering engine, ensuring consistent JavaScript execution and automatic handling of UPI deep links and file downloads across all platforms.</p>
@@ -209,11 +209,11 @@ dependencies {
 <div class="section" id="integration">
     <button class="relative inline-flex items-center justify-center p-0.5 mb-4 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-purple-500 to-pink-500 group-hover:from-purple-500 group-hover:to-pink-500 hover:text-black dark:text-white focus:ring-4 focus:outline-none focus:ring-purple-200 dark:focus:ring-purple-800">
         <span class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-transparent group-hover:dark:bg-transparent">
-            UpiGateway Custom Tabs Integration Guide
+            DEZOPAY Custom Tabs Integration Guide
         </span>
     </button>
     <div id="iframe-container" class="hidden mt-4">
-        <iframe id="UpiGateway-iframe" class="w-full h-[850px] border-2 border-gray-200 rounded-lg shadow-lg" src="" title="UpiGateway Custom Tabs"></iframe>
+        <iframe id="DEZOPAY-iframe" class="w-full h-[850px] border-2 border-gray-200 rounded-lg shadow-lg" src="" title="DEZOPAY Custom Tabs"></iframe>
     </div>
 </div>
 
@@ -264,8 +264,8 @@ dependencies {
 
         <!-- Footer Section -->
         <footer class="footer" role="contentinfo">
-            <p>Powered by <span class="text-orange-500 font-semibold">UpiGateway<sup class="text-xs">™</sup></span></p>
-            <p>© <?php echo date("Y"); ?> UpiGateway. All rights reserved.</p>
+            <p>Powered by <span class="text-orange-500 font-semibold">DEZOPAY<sup class="text-xs">™</sup></span></p>
+            <p>© <?php echo date("Y"); ?> DEZOPAY. All rights reserved.</p>
         </footer>
         <a href="/auth/apidetails" class="fixed top-1/2 right-4 transform -translate-y-1/2 px-6 py-3 text-white bg-blue-600 rounded-lg hover:bg-blue-700 transition duration-300 shadow-lg">
             <span class="relative z-10">Back To Api Details</span>
@@ -275,17 +275,17 @@ dependencies {
         
 <script>
     // Function to load the iframe content
-    function loadUpiGatewayIframe() {
+    function loadDEZOPAYIframe() {
         const iframeContainer = document.getElementById('iframe-container');
-        const iframe = document.getElementById('UpiGateway-iframe');
+        const iframe = document.getElementById('DEZOPAY-iframe');
         const button = document.querySelector('#integration button');
 
-        // URL of the UpiGateway_CostoTabs page (update with the actual URL)
-        const UpiGatewayUrl = 'UpiGateway_CostoTabs'; // Replace with actual URL or local path
+        // URL of the DEZOPAY_CostoTabs page (update with the actual URL)
+        const DEZOPAYUrl = 'DEZOPAY_CostoTabs'; // Replace with actual URL or local path
 
         button.addEventListener('click', () => {
             // Set the iframe source and show the container
-            iframe.src = UpiGatewayUrl;
+            iframe.src = DEZOPAYUrl;
             iframeContainer.classList.remove('hidden');
 
             // Optional: Scroll to the iframe smoothly
@@ -294,12 +294,12 @@ dependencies {
 
         // Optional: Handle iframe loading errors
         iframe.addEventListener('error', () => {
-            iframeContainer.innerHTML = '<p class="text-red-600 text-center">Failed to load UpiGateway Custom Tabs. Please try again later.</p>';
+            iframeContainer.innerHTML = '<p class="text-red-600 text-center">Failed to load DEZOPAY Custom Tabs. Please try again later.</p>';
         });
     }
 
     // Initialize the iframe loading functionality
-    window.addEventListener('DOMContentLoaded', loadUpiGatewayIframe);
+    window.addEventListener('DOMContentLoaded', loadDEZOPAYIframe);
 </script>
 
 <?php

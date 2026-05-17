@@ -293,7 +293,7 @@ if ($result->num_rows > 0) {
                                 $updateStmt->bind_param("ss", $merchantMobile, $user_token);
                                 if ($updateStmt->execute()) {
                                     // Send WhatsApp message
-                                    $message = "Hi 👋\nYour $method merchant account (📱 $merchantMobile) has been deactivated 🚫 due to 15 continuous failed transactions.\n\n📌 Please:\n1️⃣ Check your merchant setup.\n2️⃣ Reconnect if needed.\n4️⃣ Guide Users To work with UpiGateway.\n3️⃣ Still not working? Contact UpiGateway Support.\n\n🛠 Let's fix this quickly and get you back on track! ✅";
+                                    $message = "Hi 👋\nYour $method merchant account (📱 $merchantMobile) has been deactivated 🚫 due to 15 continuous failed transactions.\n\n📌 Please:\n1️⃣ Check your merchant setup.\n2️⃣ Reconnect if needed.\n4️⃣ Guide Users To work with DEZOPAY.\n3️⃣ Still not working? Contact DEZOPAY Support.\n\n🛠 Let's fix this quickly and get you back on track! ✅";
                                     $msgresult = sendwa($merchantMobile, $message);
                                     
                                     // Check if need to update user connection status

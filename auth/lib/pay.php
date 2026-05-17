@@ -147,9 +147,9 @@ $rrrr = mysqli_query($conn, $sql);
 
      if ($_POST["for"] == "referpay") {
          $email = $_POST["mobile"];
-         $remark = "UpiGateway Join";
+         $remark = "DEZOPAY Join";
      }
-     $remark = "UpiGateway Renew";
+     $remark = "DEZOPAY Renew";
      // Data to be sent in the POST request
      $data = [
          "customer_mobile" => $email,

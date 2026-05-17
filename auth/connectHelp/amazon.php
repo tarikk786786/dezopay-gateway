@@ -24,7 +24,7 @@ include_once('head.php')
     </div>
     <div class="tip">
         <h2>6. Avoid Logging in Again</h2>
-        <p>Do not log in to the same Amazon account on any browser after connecting to UpiGateway. & Do Not Logout Frm That browser witch used to get Coockes</p>
+        <p>Do not log in to the same Amazon account on any browser after connecting to DEZOPAY. & Do Not Logout Frm That browser witch used to get Coockes</p>
     </div>
     <div class="tip">
         <h2>7. Get Correct UPI ID</h2>

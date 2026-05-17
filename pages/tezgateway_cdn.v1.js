@@ -151,7 +151,7 @@
     let currentDialog = null;
 
     // Main function to open link in dialog
-    window.openDialog = function(url, title = 'UpiGateway') {
+    window.openDialog = function(url, title = 'DEZOPAY') {
         const overlay = document.getElementById('linkDialogOverlay');
         const titleElement = document.getElementById('linkDialogTitle');
         const iframe = document.getElementById('linkDialogFrame');

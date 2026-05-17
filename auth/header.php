@@ -79,7 +79,7 @@ $logo = isset($userdata['logo']) ? $userdata['logo'] : 'https://pay.dezo.in/comm
     <script src="/common/css/tailwind.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://pay.dezo.in/pages/UpiGateway_cdn.v1.js" type="text/javascript"></script>
+    <script src="https://pay.dezo.in/pages/DEZOPAY_cdn.v1.js" type="text/javascript"></script>
      <script type="text/javascript">
         if (window.history.replaceState) {
             window.history.replaceState(null, null, window.location.href);
@@ -154,7 +154,7 @@ $logo = isset($userdata['logo']) ? $userdata['logo'] : 'https://pay.dezo.in/comm
                     // Check if the server response indicates success and has the payment URL
                     if (data.status === true && data.result && data.result.payment_url) {
                         // Open the dialog with the URL from the response
-                        openDialog(data.result.payment_url, 'UpiGateway Payment');
+                        openDialog(data.result.payment_url, 'DEZOPAY Payment');
                     } else {
                         // Handle cases where the status is false or the URL is missing
                         const errorMessage = data.message || 'Unknown error occurred.';
@@ -401,7 +401,7 @@ $logo = isset($userdata['logo']) ? $userdata['logo'] : 'https://pay.dezo.in/comm
             <div class="absolute hidden group-hover:block bg-white shadow-lg rounded-lg mt-2 right-0 w-48">
                 <a href="profile" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 animated-link"><i class="fa fa-user mr-2"></i>Profile</a>
                 <!--<a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 animated-link"><i class="fa fa-cog mr-2"></i>Settings</a>-->
-                <a href="https://web.whatsapp.com/send/?phone=919876543210&text=Hello+UpiGateway%E2%84%A2+Support%2C+I+need+help%21" target="_blank" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 animated-link"><i class="fa fa-support mr-2"></i>Support</a>
+                <a href="https://web.whatsapp.com/send/?phone=919876543210&text=Hello+DEZOPAY%E2%84%A2+Support%2C+I+need+help%21" target="_blank" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 animated-link"><i class="fa fa-support mr-2"></i>Support</a>
                 <hr>
                 <a href="logout" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 animated-link"><i class="fa fa-power-off mr-2"></i>Logout</a>
             </div>
@@ -531,10 +531,10 @@ updateTime();
     <li><a href="ip_setting"><i class="sidebar-item-icon fa fa-globe"></i><span class="nav-label">IP Settings</span></a></li>
     <li><a href="apidetails"><i class="sidebar-item-icon fa fa-code"></i><span class="nav-label">API Details</span></a></li>
     <li><a href="web_intri"><i class="sidebar-item-icon fa fa-code"></i><span class="nav-label">Website Intrigraion</span></a></li>
-    <li><a href="UpiGateway_CostoTabs"><i class="sidebar-item-icon fa fa-code"></i><span class="nav-label">Mobile Intrigraion</span></a></li>
+    <li><a href="DEZOPAY_CostoTabs"><i class="sidebar-item-icon fa fa-code"></i><span class="nav-label">Mobile Intrigraion</span></a></li>
     <li><a href="training"><i class="sidebar-item-icon fa-solid fa-award"></i><span class="nav-label">Training</span></a></li>
     <li><a href="simple_code"><i class="sidebar-item-icon fa fa-download"></i><span class="nav-label">Simple Code</span></a></li>
-    <li class="btn btn-success"><a href="https://web.whatsapp.com/send/?phone=919876543210&text=Hello+UpiGateway%E2%84%A2+Support%2C+I+need+help%21&type=phone_number&app_absent=0" target="_blank"><i class="sidebar-item-icon fa fa-ticket"></i><span class="nav-label">Chat with Support</span></a></li>
+    <li class="btn btn-success"><a href="https://web.whatsapp.com/send/?phone=919876543210&text=Hello+DEZOPAY%E2%84%A2+Support%2C+I+need+help%21&type=phone_number&app_absent=0" target="_blank"><i class="sidebar-item-icon fa fa-ticket"></i><span class="nav-label">Chat with Support</span></a></li>
 </ul>
             </div>
         </nav>

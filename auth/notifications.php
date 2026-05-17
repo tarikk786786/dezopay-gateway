@@ -91,7 +91,7 @@ if ($userdata['telegram_subscribed'] == 'on') {
     // exit;
 } elseif ($userdata['telegram_subscribed'] == 'off') {
     echo "User has not subscribed to Telegram notifications.<br>"; // Debugging step
-    $subscribeLink = "https://t.me/UpiGateway_bot?start=" . $merchant_id;
+    $subscribeLink = "https://t.me/DEZOPAY_bot?start=" . $merchant_id;
 
     // At the bottom of your PHP file or where you want to include the script
     echo '<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>';

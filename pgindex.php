@@ -1,321 +1,284 @@
+<?php
+// Initialize or load any configs here if needed.
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Payment Page</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Complete Your Payment | DEZOPAY Secure Checkout</title>
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#f0f9ff',
+                            100: '#e0f2fe',
+                            500: '#0ea5e9',
+                            600: '#0284c7',
+                            700: '#0369a1',
+                            900: '#0c4a6e',
+                        },
+                        paytm: '#002970',
+                        gpay: '#ea4335',
+                        phonepe: '#5f259f'
+                    },
+                    boxShadow: {
+                        'premium': '0 20px 40px -15px rgba(0,0,0,0.05), 0 0 20px 0 rgba(0,0,0,0.02)',
+                        'inner-soft': 'inset 0 2px 4px 0 rgba(0, 0, 0, 0.03)',
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 0.5s ease-out forwards',
+                        'slide-up': 'slideUp 0.6s ease-out forwards',
+                        'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    },
+                    keyframes: {
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        },
+                        slideUp: {
+                            '0%': { opacity: '0', transform: 'translateY(15px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Phosphor Icons for premium icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Roboto', sans-serif;
-        }
-
         body {
-            background-color: #f3f4f7;
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
+            background-color: #f8fafc;
+            background-image: radial-gradient(#e2e8f0 1px, transparent 1px);
+            background-size: 24px 24px;
+            -webkit-font-smoothing: antialiased;
         }
-
-        .container {
-            width: 95%;
-            max-width: 400px;
-            margin: 15px auto;
-            background-color: #ffffff;
-            border-radius: 14px;
-            box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
-            padding-bottom: 20px;
+        
+        /* Custom Scrollbar for hidden elements */
+        ::-webkit-scrollbar {
+            width: 4px;
         }
-
-        .header {
-            background-color: #2C3E88;
-            padding: 15px;
-            color: #fff;
-            display: flex;
-            align-items: center;
-            border-top-left-radius: 10px;
-            border-top-right-radius: 10px;
+        ::-webkit-scrollbar-track {
+            background: transparent;
         }
-
-        .header img {
-            width: 50px;
-            border-radius: 20%;
-            margin-right: 10px;
+        ::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 4px;
         }
-
-        .header .company-info {
-            display: flex;
-            flex-direction: column;
+        
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.9);
         }
-
-        .company-info h1 {
-            font-size: 16px;
-            font-weight: 700;
-        }
-
-        .trusted-business {
-            display: flex;
-            
-            align-items: center;
-            margin-top: 5px;
-        }
-
-        .trusted-business img {
+        
+        .loader-spinner {
+            border: 3px solid rgba(255,255,255,0.3);
+            border-radius: 50%;
+            border-top: 3px solid white;
             width: 20px;
-            margin-left: 5px;
+            height: 20px;
+            animation: spin 1s linear infinite;
         }
-
-        .price-summary {
-            background-color: #f2f3f7;
-            padding: 15px;
-            font-size: 14px;
-            text-align: center;
-            font-weight: bold;
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
         }
-
-        /* QR Code Section */
-        .qr-section {
-            background-color: #f7f9fc;
-            padding: 15px;
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-           justify-content: space-around;
-            margin-bottom: 15px;
-        }
-
-        .qr-section img {
-            width: 125px;
-            height: 125px;
-            border-radius: 10px;
-        }
-
-        .qr-section .center {
-            text-align: center;
-        }
-
-        .qr-section .center span {
-            display: block;
-            font-size: 14px;
-            font-weight: 400;
-            margin-bottom: 10px;
-        }
-
-        .qr-section .center .upi-icons {
-            display: flex;
-            justify-content: center;
-            gap: 5px;
-        }
-
-        .qr-section .center .upi-icons img {
-            width: 14px;
-            height: 14px;
-            border-radius: 50%; /* Make icons round */
-        }
-
-        .payment-options {
-            padding: 15px;
-        }
-
-        .payment-options h2 {
-            font-size: 16px;
-            margin-bottom: 10px;
-        }
-
-        /* Updated Recommended Section */
-        .recommended {
-            background-color: #f9f9f9;
-            padding: 0;
-            border-radius: 10px;
-            margin-bottom: 15px;
-            overflow: hidden;
-        }
-
-        .payment-method {
-            display: flex;
-            align-items: center;
-            padding: 10px;
-            border-bottom: 1px solid #e0e0e0;
-            cursor: pointer;
-        }
-
-        .payment-method img {
-            width: 24px;
-            margin-right: 10px;
-        }
-
-        .payment-method:last-child {
-            border-bottom: none;
-        }
-
-        .payment-method span {
-            margin-left: 10px;
-        }
-
-        /* UPI Grid for 2 options per row */
-        .upi-grid {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
-
-        .upi-options {
-            display: flex;
-            align-items: center;
-            width: 48%;
-            padding: 10px;
-            border: 1px solid #e0e0e0;
-            border-radius: 10px;
-            cursor: pointer;
-            background-color: #fff;
-        }
-
-        .upi-options img {
-            width: 24px;
-            margin-right: 10px;
-        }
-
-        /* Timer Style */
-        .timer {
-            text-align: center;
-            font-size: 16px;
-            padding: 10px;
-            color: red;
-        }
-
-        /* Footer layout: price and button side by side */
-        .footer {
-            margin-top: auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 15px;
-            background-color: #f3f4f7;
-            border-top: 1px solid #e0e0e0;
-        }
-
-        .footer .price {
-            font-size: 18px;
-            font-weight: bold;
-        }
-
-        .footer button {
-            background-color: #000;
-            color: #fff;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 5px;
-            cursor: pointer;
-            font-weight: bold;
-        }
-
     </style>
 </head>
-<body>
+<body class="min-h-screen flex items-center justify-center p-4 text-slate-800">
 
-    <div class="container">
-        <!-- Header Section -->
-        <div class="header">
-            <img src="https://play-lh.googleusercontent.com/JCZoQLOso_2hfFEAeHC6zEhFWGlzbuh8meJHq7cF-qc2FwBrh7yz01ecWOrK8FnRLuA" alt="Company Logo">
-            <div class="company-info">
-                <h1>Dhanya Infotech Pvt. Ltd.</h1>
-                <div class="trusted-business">
-                   
-                    <img src="https://d6xcmfyh68wv8.cloudfront.net/assets/trusted-badge/1st-fold/top-illustration-mob.svg" alt="Trusted Badge">
-                     <p>Bharatpay Trusted Business</p>
-                </div>
-            </div>
+    <div class="w-full max-w-md animate-slide-up">
+        <!-- Secure Header -->
+        <div class="flex items-center justify-center gap-2 mb-4 text-slate-500 text-sm font-medium animate-fade-in">
+            <i class="ph-fill ph-lock-key text-green-500 text-base"></i>
+            <span>100% Secure Payment by DEZOPAY</span>
         </div>
 
-        <!-- Price Summary Section -->
-       
-
-        <!-- QR Code Section -->
-        <div class="qr-section">
-            <img src="https://i.pinimg.com/736x/a8/69/40/a86940a4ed8a69539b341f3c414c47b3.jpg" alt="QR Code">
-            <div class="center">
-                <span>SCAN WITH ANY APP</span>
-                <div class="upi-icons">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQyVO9LUWF81Ov6LZR50eDNu5rNFCpkn0LwYQ&s" alt="Google Pay">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTo4x8kSTmPUq4PFzl4HNT0gObFuEhivHOFYg&s" alt="PhonePe">
-                    <img src="https://w7.pngwing.com/pngs/305/719/png-transparent-paytm-ecommerce-shopping-social-icons-circular-color-icon-thumbnail.png" alt="PayTM">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRSouM4icV33KEDtJakZiySZN3HH2LPfv3-BA&s" alt="BHIM">
-                    <img src="https://yt3.googleusercontent.com/QI4nyLQV7enKT5hvyJfs7UPoY9PZf3HQYxT5GM56GWiuXo4us2huT7Hru2FNCrgxsPSIJuNzyA=s900-c-k-c0x00ffffff-no-rj" alt="BHIM">
+        <!-- Main Checkout Card -->
+        <div class="glass-panel shadow-premium rounded-3xl overflow-hidden relative">
+            
+            <!-- Top Gradient Bar -->
+            <div class="h-2 w-full bg-gradient-to-r from-blue-500 via-indigo-500 to-purple-500"></div>
+            
+            <!-- Merchant Header -->
+            <div class="px-6 py-6 border-b border-slate-100 flex flex-col items-center justify-center text-center relative bg-white">
+                <div class="w-14 h-14 bg-slate-50 rounded-2xl border border-slate-100 shadow-sm flex items-center justify-center mb-3">
+                    <!-- Placeholder for Merchant Logo -->
+                    <i class="ph-duotone ph-storefront text-2xl text-brand-600"></i>
+                </div>
+                <h1 class="font-bold text-lg text-slate-800 tracking-tight">Dhanya Infotech Pvt. Ltd.</h1>
+                <div class="flex items-center gap-1.5 mt-1.5 px-3 py-1 bg-green-50 rounded-full border border-green-100">
+                    <i class="ph-fill ph-check-circle text-green-600 text-sm"></i>
+                    <span class="text-xs font-semibold text-green-700 uppercase tracking-wide">Verified Business</span>
                 </div>
             </div>
+
+            <!-- Amount Section -->
+            <div class="bg-slate-50 px-6 py-5 border-b border-slate-100 flex justify-between items-center">
+                <div class="flex flex-col">
+                    <span class="text-xs text-slate-500 font-medium uppercase tracking-wider mb-1">Total Amount Due</span>
+                    <div class="flex items-baseline gap-1">
+                        <span class="text-xl font-bold text-slate-700">₹</span>
+                        <span class="text-3xl font-extrabold text-slate-900 tracking-tight">1,250</span>
+                        <span class="text-lg font-semibold text-slate-500">.00</span>
+                    </div>
+                </div>
+                
+                <div class="flex flex-col items-end">
+                    <span class="text-xs text-slate-500 font-medium mb-1">Time Remaining</span>
+                    <div class="flex items-center gap-1.5 px-3 py-1.5 bg-red-50 text-red-600 rounded-lg font-mono font-bold text-sm border border-red-100 shadow-inner-soft">
+                        <i class="ph-duotone ph-timer"></i>
+                        <span id="timer">05:00</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="p-6 bg-white">
+                
+                <!-- QR Code Area -->
+                <div class="flex flex-col items-center justify-center mb-8">
+                    <div class="relative group cursor-pointer">
+                        <div class="absolute inset-0 bg-brand-500 blur-xl opacity-20 rounded-3xl animate-pulse-slow"></div>
+                        <div class="relative bg-white p-4 rounded-3xl border-2 border-slate-100 shadow-sm transition-transform duration-300 group-hover:scale-[1.02]">
+                            <!-- Static QR placeholder for now -->
+                            <img src="https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=upi://pay?pa=merchant@upi&pn=DhanyaInfotech&am=1250&cu=INR" alt="Scan to pay" class="w-40 h-40 rounded-xl opacity-90 transition-opacity duration-300 group-hover:opacity-100">
+                            
+                            <!-- Scanner overlay effect -->
+                            <div class="absolute top-0 left-0 w-full h-1 bg-brand-500/50 shadow-[0_0_8px_2px_rgba(14,165,233,0.5)] rounded-full hidden group-hover:block" style="animation: scan 2s linear infinite;"></div>
+                        </div>
+                    </div>
+                    <p class="mt-4 text-sm font-semibold text-slate-500 tracking-wide uppercase">Scan with any UPI App</p>
+                    
+                    <div class="flex items-center justify-center gap-3 mt-3">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/f/f2/Google_Pay_Logo.svg" alt="GPay" class="h-4 grayscale hover:grayscale-0 transition-all">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/8/86/PhonePe_logo.png" alt="PhonePe" class="h-4 grayscale hover:grayscale-0 transition-all">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/2/24/Paytm_Logo_%28standalone%29.svg" alt="Paytm" class="h-3 grayscale hover:grayscale-0 transition-all">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/e/e1/UPI-Logo-vector.svg" alt="UPI" class="h-4 grayscale hover:grayscale-0 transition-all">
+                    </div>
+                </div>
+
+                <!-- Divider -->
+                <div class="flex items-center gap-4 mb-6">
+                    <div class="h-px bg-slate-200 flex-1"></div>
+                    <span class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Or pay via</span>
+                    <div class="h-px bg-slate-200 flex-1"></div>
+                </div>
+
+                <!-- One-Click UPI Options -->
+                <div class="space-y-3">
+                    
+                    <button class="w-full flex items-center justify-between p-4 rounded-xl border border-slate-200 bg-white hover:bg-slate-50 hover:border-slate-300 transition-all group">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-lg bg-slate-50 flex items-center justify-center border border-slate-100">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/f/f2/Google_Pay_Logo.svg" alt="GPay" class="h-4">
+                            </div>
+                            <div class="flex flex-col text-left">
+                                <span class="font-semibold text-slate-800 text-sm">Google Pay</span>
+                                <span class="text-xs text-slate-500 font-medium">Fastest checkout</span>
+                            </div>
+                        </div>
+                        <i class="ph-bold ph-caret-right text-slate-400 group-hover:text-slate-600 group-hover:translate-x-1 transition-transform"></i>
+                    </button>
+
+                    <button class="w-full flex items-center justify-between p-4 rounded-xl border border-slate-200 bg-white hover:bg-slate-50 hover:border-slate-300 transition-all group">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-lg bg-[#5f259f]/5 flex items-center justify-center border border-[#5f259f]/10">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/8/86/PhonePe_logo.png" alt="PhonePe" class="h-5">
+                            </div>
+                            <div class="flex flex-col text-left">
+                                <span class="font-semibold text-slate-800 text-sm">PhonePe</span>
+                                <span class="text-xs text-slate-500 font-medium">Pay directly via app</span>
+                            </div>
+                        </div>
+                        <i class="ph-bold ph-caret-right text-slate-400 group-hover:text-slate-600 group-hover:translate-x-1 transition-transform"></i>
+                    </button>
+                    
+                    <button class="w-full flex items-center justify-between p-4 rounded-xl border border-slate-200 bg-slate-50 hover:bg-slate-100 transition-all group mt-2">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-lg bg-white flex items-center justify-center border border-slate-200 shadow-sm">
+                                <i class="ph-duotone ph-list-plus text-xl text-slate-600"></i>
+                            </div>
+                            <div class="flex flex-col text-left">
+                                <span class="font-semibold text-slate-800 text-sm">More UPI Apps</span>
+                                <span class="text-xs text-slate-500 font-medium">Paytm, BHIM, Amazon Pay</span>
+                            </div>
+                        </div>
+                        <i class="ph-bold ph-caret-down text-slate-400"></i>
+                    </button>
+
+                </div>
+
+            </div>
+            
+            <!-- Secure Footer Badge -->
+            <div class="bg-slate-50 p-4 border-t border-slate-100 flex items-center justify-center gap-4">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/e/e1/UPI-Logo-vector.svg" alt="UPI" class="h-4 opacity-50">
+                <div class="w-px h-4 bg-slate-300"></div>
+                <div class="flex items-center gap-1 opacity-50">
+                    <i class="ph-fill ph-shield-check text-slate-600"></i>
+                    <span class="text-xs font-semibold text-slate-600">PCI-DSS Compliant</span>
+                </div>
+            </div>
+
         </div>
-
-        <!-- Payment Options Section -->
-        <div class="payment-options">
-            <!-- Recommended -->
-            <h2>Recommended</h2>
-            <div class="recommended">
-                <div class="payment-method">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQyVO9LUWF81Ov6LZR50eDNu5rNFCpkn0LwYQ&s" alt="Google Pay">
-                    <span>UPI - Google Pay</span>
-                </div>
-                <div class="payment-method">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTo4x8kSTmPUq4PFzl4HNT0gObFuEhivHOFYg&s" alt="PhonePe">
-                    <span>UPI - PhonePe</span>
-                </div>
-            </div>
-
-            <!-- All Payment Options -->
-            <h2>All Payment Options</h2>
-            <div class="upi-grid">
-                <!-- 2 UPI options per row -->
-                <div class="upi-options">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQyVO9LUWF81Ov6LZR50eDNu5rNFCpkn0LwYQ&s" alt="Google Pay">
-                    <span>Google Pay</span>
-                </div>
-                <div class="upi-options">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTo4x8kSTmPUq4PFzl4HNT0gObFuEhivHOFYg&s" alt="PhonePe">
-                    <span>PhonePe</span>
-                </div>
-                <div class="upi-options">
-                    <img src="https://w7.pngwing.com/pngs/110/280/png-transparent-paytm-standalone-hd-logo.png" alt="PayTM">
-                    <span>PayTM</span>
-                </div>
-                <div class="upi-options">
-                    <i class="fas fa-university"></i>
-                    <span>Apps & UPI ID</span>
-                </div>
-            </div>
+        
+        <!-- Support link -->
+        <div class="mt-6 text-center text-sm font-medium text-slate-500">
+            Having trouble? <a href="#" class="text-brand-600 hover:text-brand-700 transition-colors">Contact Support</a>
         </div>
-
-        <!-- Timer Section -->
-        <div class="timer" id="timer">Time Remaining: 05:00</div>
-
-        <!-- Footer -->
-      
     </div>
 
-    <!-- Countdown Timer Script -->
+    <style>
+        @keyframes scan {
+            0% { top: 0; opacity: 0; }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% { top: 100%; opacity: 0; }
+        }
+    </style>
+
+    <!-- Timer Script -->
     <script>
-        // Timer Script for 5 minutes countdown
-        const timerElement = document.getElementById('timer');
-        let timeRemaining = 300; // 5 minutes in seconds
+        document.addEventListener('DOMContentLoaded', () => {
+            const timerElement = document.getElementById('timer');
+            let timeRemaining = 300; // 5 minutes
 
-        const countdown = setInterval(() => {
-            const minutes = Math.floor(timeRemaining / 60);
-            const seconds = timeRemaining % 60;
+            const countdown = setInterval(() => {
+                const minutes = Math.floor(timeRemaining / 60);
+                const seconds = timeRemaining % 60;
+                
+                timerElement.textContent = `${minutes < 10 ? '0' : ''}${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
 
-            // Format time with leading zero for seconds
-            timerElement.textContent = `Time Remaining: ${minutes < 10 ? '0' : ''}${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
-
-            if (timeRemaining > 0) {
-                timeRemaining--;
-            } else {
-                clearInterval(countdown); // Stop the timer when it reaches 0
-                timerElement.textContent = 'Time’s up!';
-            }
-        }, 1000);
+                if (timeRemaining > 0) {
+                    timeRemaining--;
+                    // Add subtle pulse when time is running out (< 1 min)
+                    if (timeRemaining < 60 && !timerElement.parentElement.classList.contains('animate-pulse')) {
+                        timerElement.parentElement.classList.add('animate-pulse');
+                    }
+                } else {
+                    clearInterval(countdown);
+                    timerElement.textContent = '00:00';
+                    timerElement.parentElement.classList.replace('bg-red-50', 'bg-slate-100');
+                    timerElement.parentElement.classList.replace('text-red-600', 'text-slate-500');
+                    timerElement.parentElement.classList.replace('border-red-100', 'border-slate-200');
+                    // Add session expiry logic here
+                }
+            }, 1000);
+        });
     </script>
-    <script disable-devtool-auto="" src="https://pay.imb.org.in/Qrcode/disable-devtool.js" data-url="https://www.google.com/"></script> 
-
 </body>
 </html>

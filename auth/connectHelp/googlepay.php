@@ -13,7 +13,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>UpiGateway Licence Activation</title>
+  <title>DEZOPAY Licence Activation</title>
   <style>
     body{margin:0;font:16px/1.5 system-ui,Segoe UI,Roboto,Arial;background:#f7f7f8;color:#0f172a;}
     .wrap{max-width:640px;margin:5vh auto;padding:16px}
@@ -29,11 +29,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <body>
   <div class="wrap">
     <div class="card">
-      <h1>UpiGateway Licence Activation</h1>
+      <h1>DEZOPAY Licence Activation</h1>
       <p>This merchant requires a <strong>one‑time licence</strong> for activation.</p>
       <ol>
         <li>Go to the purchase page and buy your licence: <br>
-          <a class="btn" href="https://digistore.tezindia.in/items/gpay-licence-for-UpiGateway/1002" target="_blank">Purchase Licence</a>
+          <a class="btn" href="https://digistore.tezindia.in/items/gpay-licence-for-DEZOPAY/1002" target="_blank">Purchase Licence</a>
         </li>
         <li>After purchase, you will receive a licence key.</li>
         <li>Enter your licence key below and contact support to activate.</li>

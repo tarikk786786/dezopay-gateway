@@ -1252,7 +1252,7 @@ body::before {
                     <span class="pixel-icon"></span>
                     <span class="pixel-icon"></span>
                 </div>
-                <div class="footer-text">Powered by UpiGateway</a></div>
+                <div class="footer-text">Powered by DEZOPAY</a></div>
                 <div class="footer-tagline">Secure Payments. Retro Style.</div>
             </div>
         </div>

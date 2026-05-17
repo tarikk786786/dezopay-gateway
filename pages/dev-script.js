@@ -47,7 +47,7 @@
     document.addEventListener('keydown', function(event) {
         if (event.keyCode === 123 || (event.ctrlKey && event.shiftKey && [73, 74].includes(event.keyCode)) || (event.ctrlKey && event.keyCode === 85)) {
             event.preventDefault();
-            showSecurityMessage('UpiGateway™ Security Activated: DevTools are disabled!');
+            showSecurityMessage('DEZOPAY™ Security Activated: DevTools are disabled!');
         }
     });
 

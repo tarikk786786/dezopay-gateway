@@ -102,7 +102,7 @@ function sendWA($mobile_no, $msg) {
     $message = urlencode($msg);
     $sender = "9876543210";
     $api_key = "GxtcnAHodm3okM36s7kNqqRyNlpAiC";
-    $footer = urlencode("Team UpiGateway");
+    $footer = urlencode("Team DEZOPAY");
 
     $primary_url = "https://wa.whatsappgateway.in/send-message?api_key=$api_key&sender=$sender&number=91$mobile_no&message=$message&footer=$footer";
 
@@ -155,7 +155,7 @@ function sendEmail($to_email, $subject, $message) {
         $mail->Port = 465; // SMTP Port for SSL
 
         // Email Details
-        $mail->setFrom('india.business@gmail.com', 'UpiGateway'); // Sender email and name
+        $mail->setFrom('india.business@gmail.com', 'DEZOPAY'); // Sender email and name
         $mail->addAddress($to_email); // Recipient email
 
         $mail->isHTML(true); // Email format
@@ -314,7 +314,7 @@ textarea {
 </head>
 <body>
     <div class='email-container'>
-        <div class='email-header'>UpiGateway</div>
+        <div class='email-header'>DEZOPAY</div>
         <div class='email-body'>
             <p>Hello <span class='highlight'>Partner</span>,</p>
             <textarea id="w3review" name="w3review" rows="4" cols="50" readonly>{$message}</textarea>
@@ -322,12 +322,12 @@ textarea {
             <a href='https://whatsapp.com/channel/0029Vas5C79Eawdhj46eCc1J' class='btn'>Join Support Channel</a>
         </div>
         <div class='email-footer'>
-            <p>© 2025 <strong>UpiGateway™</strong>. All Rights Reserved.</p>
-            <p><a href='https://{$server}' style='color: #00d9ff; text-decoration: none; font-weight: 600;'>Explore UpiGateway</a></p>
+            <p>© 2025 <strong>DEZOPAY™</strong>. All Rights Reserved.</p>
+            <p><a href='https://{$server}' style='color: #00d9ff; text-decoration: none; font-weight: 600;'>Explore DEZOPAY</a></p>
             <div class='social-icons'>
-                <a href='https://facebook.com/UpiGateway' target='_blank'>Facebook</a> | 
-                <a href='https://twitter.com/UpiGateway' target='_blank'>Twitter</a> | 
-                <a href='https://linkedin.com/company/UpiGateway' target='_blank'>LinkedIn</a>
+                <a href='https://facebook.com/DEZOPAY' target='_blank'>Facebook</a> | 
+                <a href='https://twitter.com/DEZOPAY' target='_blank'>Twitter</a> | 
+                <a href='https://linkedin.com/company/DEZOPAY' target='_blank'>LinkedIn</a>
             </div>
         </div>
     </div>
@@ -422,7 +422,7 @@ function credit_balance($user_id, $amount, $utr, $remark) {
 🔗 UTR: $utr
 📝 Remark: $remark
 
-*Thanks for using UpiGateway! 🚀*";
+*Thanks for using DEZOPAY! 🚀*";
         $subject = "Wallet Credit Notification";
         $notification_response = sendNotification($mobile, $email, $msg, $subject);
 
@@ -499,7 +499,7 @@ function debit_balance($user_id, $amount, $utr, $remark) {
 🔗 UTR: $utr
 📝 Remark: $remark
 
-*Thanks for using UpiGateway! 🚀*";
+*Thanks for using DEZOPAY! 🚀*";
         $subject = "Wallet Debit Notification";
         $notification_response = sendNotification($mobile, $email, $msg, $subject);
 
@@ -621,11 +621,11 @@ function PlanRenewal($orderid, $utr, $remark1, $txnStatus, $remark2, $site_setti
         $credit2 = credit_balance($referUid, $bonusamount, $utr, "Refer JOIN Bonus");
 
         if ($credit && $credit2) {
-            $msg = "Congratulations!! We Credited Your Joining Bonus of Rs. " . $bonusamount . " In UpiGateway™ Wallet";
+            $msg = "Congratulations!! We Credited Your Joining Bonus of Rs. " . $bonusamount . " In DEZOPAY™ Wallet";
             // Assuming sendWA function exists globally or is included
             sendWA($mobile, $msg);
             // Instead of alert, you might return this message or log it
-            // echo '<script>alert("Congratulations!! We Credited Your Joining Bonus In UpiGateway™ Wallet, Please Login Your Account Now");</script>';
+            // echo '<script>alert("Congratulations!! We Credited Your Joining Bonus In DEZOPAY™ Wallet, Please Login Your Account Now");</script>';
         }
     }
 

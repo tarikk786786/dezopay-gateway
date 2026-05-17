@@ -189,10 +189,10 @@ $stmt->close();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Secure payment gateway for processing transactions with UpiGateway">
-    <meta name="keywords" content="payment, UPI, QR code, UpiGateway, secure transaction">
-    <meta name="author" content="UpiGateway">
-    <title>UpiGateway - Secure Payment</title>
+    <meta name="description" content="Secure payment gateway for processing transactions with DEZOPAY">
+    <meta name="keywords" content="payment, UPI, QR code, DEZOPAY, secure transaction">
+    <meta name="author" content="DEZOPAY">
+    <title>DEZOPAY - Secure Payment</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
@@ -619,7 +619,7 @@ $stmt->close();
                     <div></div>
                     <div></div>
                 </div>
-                <div class="logo-text">UpiGateway</div>
+                <div class="logo-text">DEZOPAY</div>
                 <p>Connecting securely...</p>
             </div>
         </div>
@@ -710,7 +710,7 @@ $stmt->close();
         </div>
 
         <?php if (!$removeBranding && $displayHeaderFooter): ?>
-            <div class="footer">Powered by <span class="font-semibold">UpiGateway™</span></div>
+            <div class="footer">Powered by <span class="font-semibold">DEZOPAY™</span></div>
         <?php endif; ?>
     </main>
 

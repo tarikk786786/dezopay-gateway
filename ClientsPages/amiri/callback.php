@@ -161,12 +161,12 @@ $message = urlencode("New Payment Recived from *$costmor_ID*
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UpiGateway™ - Transaction Result</title>
+    <title>DEZOPAY™ - Transaction Result</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
 <body class="bg-gray-100 min-h-screen flex items-center justify-center">
     <div class="bg-white p-8 rounded-lg shadow-md max-w-md w-full">
-        <h1 class="text-2xl font-bold text-center text-blue-600 mb-6">UpiGateway™ Transaction Result</h1>
+        <h1 class="text-2xl font-bold text-center text-blue-600 mb-6">DEZOPAY™ Transaction Result</h1>
         
         <div class="mb-6">
             <p class="text-xl font-semibold mb-2">Status: <span class="<?php echo $status_color; ?>"><?php echo $transaction_status; ?></span></p>
@@ -186,7 +186,7 @@ $message = urlencode("New Payment Recived from *$costmor_ID*
     </div>
     <?php }?>
         <!--<div class="bg-blue-50 border-l-4 border-blue-500 p-4 mb-6">-->
-        <!--    <h2 class="font-bold text-lg mb-2">Why Choose UpiGateway™?</h2>-->
+        <!--    <h2 class="font-bold text-lg mb-2">Why Choose DEZOPAY™?</h2>-->
         <!--    <ul class="list-disc list-inside space-y-1 text-sm">-->
         <!--        <li>Fast & Secure UPI Payments</li>-->
         <!--        <li>Instant Payment Links</li>-->

@@ -548,7 +548,7 @@ $news = preg_replace('/[\x00-\x08\x0B\x0C\x0E-\x1F]/u', '', $news);
                                     </div>
                                     <div class="col-md-6 col-6 form-check mb-2">
                                         <input class="form-check-input" type="checkbox" id="removeBranding" name="removeBranding" <?php echo ($vipActive) ? '' : 'disabled'; ?> <?php echo ($removeBranding) ? 'checked' : ''; ?>>
-                                        <label class="form-check-label" for="removeBranding">Remove UpiGateway Branding</label>
+                                        <label class="form-check-label" for="removeBranding">Remove DEZOPAY Branding</label>
                                     </div>
                                     <div class="col-md-6 col-6 form-check mb-2">
                                         <input class="form-check-input" type="checkbox" id="displayHeaderFooter" name="displayHeaderFooter" <?php echo ($vipActive) ? '' : 'disabled'; ?> <?php echo ($displayHeaderFooter) ? 'checked' : ''; ?>>

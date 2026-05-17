@@ -622,13 +622,13 @@
 <body>
     <div class="container">
         <div class="header1">
-            <h1>🚀 UpiGateway Mobile Integration Steps</h1>
-            <p>A comprehensive guide to integrating UpiGateway into your mobile applications.</p>
+            <h1>🚀 DEZOPAY Mobile Integration Steps</h1>
+            <p>A comprehensive guide to integrating DEZOPAY into your mobile applications.</p>
         </div>
                 <!-- Overview Section -->
         <div class="overview-section">
             <h2>📋 Integration Overview</h2>
-            <p>UpiGateway provides a seamless UPI payment integration for mobile applications. Follow these steps to implement secure payment processing in your app.</p>
+            <p>DEZOPAY provides a seamless UPI payment integration for mobile applications. Follow these steps to implement secure payment processing in your app.</p>
             
             <div class="flow-diagram">
                 <div class="flow-step">
@@ -744,7 +744,7 @@
         <div class="platform-content active" id="android">
             <div class="content-card">
                 <h2>📱 Android Native Implementation</h2>
-                <p>Integrate UpiGateway seamlessly into your native Android applications using Custom Tabs.</p>
+                <p>Integrate DEZOPAY seamlessly into your native Android applications using Custom Tabs.</p>
                 
                 <div class="step">
                     <h3><span class="step-number">1</span>Add Dependencies</h3>
@@ -839,7 +839,7 @@ private fun openCustomTab(url: String) {
         <div class="platform-content" id="flutter">
             <div class="content-card">
                 <h2>🦋 Flutter Implementation</h2>
-                <p>Integrate UpiGateway into your Flutter applications for a consistent cross-platform payment experience.</p>
+                <p>Integrate DEZOPAY into your Flutter applications for a consistent cross-platform payment experience.</p>
                 
                 <div class="step">
                     <h3><span class="step-number">1</span>Add Package</h3>
@@ -910,7 +910,7 @@ class MyPaymentButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return ElevatedButton(
       onPressed: () => launchURL(context, paymentUrl),
-      child: Text('Open UpiGateway'),
+      child: Text('Open DEZOPAY'),
       style: ElevatedButton.styleFrom(
         primary: Theme.of(context).primaryColor,
         onPrimary: Colors.white,
@@ -951,7 +951,7 @@ class MyPaymentButton extends StatelessWidget {
         <div class="platform-content" id="react-native">
             <div class="content-card">
                 <h2>⚛️ React Native Implementation</h2>
-                <p>Integrate UpiGateway into your React Native applications for a consistent cross-platform payment experience.</p>
+                <p>Integrate DEZOPAY into your React Native applications for a consistent cross-platform payment experience.</p>
                 
                 <div class="step">
                     <h3><span class="step-number">1</span>Install Package</h3>
@@ -972,7 +972,7 @@ cd ios && pod install</pre>
 <pre>import { CustomTabs } from 'react-native-custom-tabs';
 import { Linking, Alert } from 'react-native';
 
-const openUpiGatewayTab = async (url) => {
+const openDEZOPAYTab = async (url) => {
   try {
     await CustomTabs.openURL(url, {
       toolbarColor: '#667eea', // Use your primary color
@@ -986,7 +986,7 @@ const openUpiGatewayTab = async (url) => {
         endExit: 'slide_out_right',
       },
       headers: {
-        'X-App-Name': 'UpiGatewayApp', // Optional: Custom header for tracking
+        'X-App-Name': 'DEZOPAYApp', // Optional: Custom header for tracking
       },
       forceCloseOnRedirection: false, // Keep the tab open on redirects
     });
@@ -1006,17 +1006,17 @@ const openUpiGatewayTab = async (url) => {
                 
                 <div class="step">
                     <h3><span class="step-number">3</span>Component Usage</h3>
-                    <p>Integrate the `openUpiGatewayTab` function with your React Native UI components:</p>
+                    <p>Integrate the `openDEZOPAYTab` function with your React Native UI components:</p>
                     <div class="code-block" data-lang="JavaScript">
                         <button class="copy-btn" onclick="copyCode(this)">Copy</button>
 <pre>import React from 'react';
 import { TouchableOpacity, Text, StyleSheet, View } from 'react-native';
 
-// Assuming openUpiGatewayTab is imported or defined in the same file
+// Assuming openDEZOPAYTab is imported or defined in the same file
 const PaymentButton = ({ url, title }) => (
   <TouchableOpacity 
     style={styles.button}
-    onPress={() => openUpiGatewayTab(url)}
+    onPress={() => openDEZOPAYTab(url)}
   >
     <Text style={styles.buttonText}>{title}</Text>
   </TouchableOpacity>
@@ -1048,7 +1048,7 @@ const styles = StyleSheet.create({
 
 export default () => (
   <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-    <PaymentButton url="https://pay.dezo.in/demo-payment" title="Pay with UpiGateway" />
+    <PaymentButton url="https://pay.dezo.in/demo-payment" title="Pay with DEZOPAY" />
   </View>
 );</pre>
                     </div>
@@ -1079,7 +1079,7 @@ export default () => (
         <div class="platform-content" id="xamarin">
             <div class="content-card">
                 <h2>🔷 Xamarin Implementation</h2>
-                <p>Integrate UpiGateway into your Xamarin.Android applications using Custom Tabs for an enhanced payment experience.</p>
+                <p>Integrate DEZOPAY into your Xamarin.Android applications using Custom Tabs for an enhanced payment experience.</p>
                 
                 <div class="step">
                     <h3><span class="step-number">1</span>NuGet Package Installation</h3>
@@ -1211,7 +1211,7 @@ public class MainActivity : AppCompatActivity
         <div class="platform-content" id="cordova">
             <div class="content-card">
                 <h2>📱 Cordova Implementation</h2>
-                <p>Integrate UpiGateway into your Cordova applications using the `cordova-plugin-browsertab` plugin to open Custom Tabs.</p>
+                <p>Integrate DEZOPAY into your Cordova applications using the `cordova-plugin-browsertab` plugin to open Custom Tabs.</p>
                 
                 <div class="step">
                     <h3><span class="step-number">1</span>Install Plugin</h3>
@@ -1270,7 +1270,7 @@ public class MainActivity : AppCompatActivity
                     <p>Add a button or link in your HTML to trigger the `openCustomTab` function:</p>
                     <div class="code-block" data-lang="HTML">
                         <button class="copy-btn" onclick="copyCode(this)">Copy</button>
-                      <pre>&lt;button onclick="openCustomTab('https://pay.dezo.in/demo-payment')"&gt;Open UpiGateway Payment&lt;/button&gt;
+                      <pre>&lt;button onclick="openCustomTab('https://pay.dezo.in/demo-payment')"&gt;Open DEZOPAY Payment&lt;/button&gt;
 
 &lt;!-- Or for a link --&gt;
 &lt;a href="#" onclick="openCustomTab('https://pay.dezo.in/demo-payment'); return false;"&gt;Click to Pay&lt;/a&gt;</pre>

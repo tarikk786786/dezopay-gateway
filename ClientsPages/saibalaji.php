@@ -36,7 +36,7 @@ curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($data));
 curl_setopt($ch, CURLOPT_POST, true);
 curl_setopt($ch, CURLOPT_HTTPHEADER, array(
     "Content-Type: application/x-www-form-urlencoded",
-    "User-Agent: UpiGatewayClient/1.0"
+    "User-Agent: DEZOPAYClient/1.0"
 ));
 
 $response = curl_exec($ch);

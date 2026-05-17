@@ -96,7 +96,7 @@ exit;
 Your Username: $mobile
 Your Password: $password
 Thanks & Regards
-UpiGateway™";
+DEZOPAY™";
 
     $encodedMsg = urlencode($msg);
 

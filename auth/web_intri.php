@@ -43,14 +43,14 @@
     <div class="demo-section">
         <h3>📚 CDN Library Usage</h3>
         <div class="code-section">
-            &lt;script src="https://pay.dezo.in/pages/UpiGateway_cdn.v1.js" type="text/javascript"&gt;&lt;/script&gt;
+            &lt;script src="https://pay.dezo.in/pages/DEZOPAY_cdn.v1.js" type="text/javascript"&gt;&lt;/script&gt;
         </div>
         <p><strong>Function:</strong> <code>openLinkDialog(url, title)</code></p>
     </div>
 
     <div class="demo-section">
         <div class="demo-buttons">
-            <button onclick="openDialog('https://pay.dezo.in/payment4/instant-pay/31603333b461cd8098e616f33d645fbabdd16ee4c503369918e967d6fbfaddca', 'UpiGateway')">Payment Open</button>
+            <button onclick="openDialog('https://pay.dezo.in/payment4/instant-pay/31603333b461cd8098e616f33d645fbabdd16ee4c503369918e967d6fbfaddca', 'DEZOPAY')">Payment Open</button>
         </div>
     </div>
 
@@ -60,11 +60,11 @@
 openDialog('{payment_url}');
 
 // With custom title
-openDialog('{payment_url}', 'UpiGateway');
+openDialog('{payment_url}', 'DEZOPAY');
 
 // Event listener example
 document.getElementById('myButton').addEventListener('click', () => {
-openDialog('{payment_url}', 'UpiGateway');
+openDialog('{payment_url}', 'DEZOPAY');
 });
 
 // To close dilog call js function:

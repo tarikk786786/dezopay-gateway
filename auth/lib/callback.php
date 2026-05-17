@@ -75,9 +75,9 @@ if ($remark1 == "addbalance" && $txnStatus == "SUCCESS") {
         echo("Duplicate Entry");
     }
     // Redirect after processing
-    // exit('Balance Added successfully To UpiGateway Wallet');
+    // exit('Balance Added successfully To DEZOPAY Wallet');
     echo("<script>closeLinkDialog()</script>");
-    exit('Balance Added successfully To UpiGateway Wallet');
+    exit('Balance Added successfully To DEZOPAY Wallet');
 } elseif ($remark1 == "addbalance" && $txnStatus == "FAILURE") {
     // header("Location: https://" . $_SERVER["SERVER_NAME"] . "/auth/dashboard");
     exit('Transation Failed');

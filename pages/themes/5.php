@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UpiGateway - Neomorphic Payment</title>
+    <title>DEZOPAY - Neomorphic Payment</title>
     <!-- Google Fonts: Poppins for modern, clean typography -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <!-- Font Awesome for icons -->
@@ -772,7 +772,7 @@
         </div>
         <div class="loader-text">Initializing Secure Payment...</div>
         <?php if (!$removeBranding): ?>
-        <div class="loader-brand">UpiGateway<sup>™</sup></div>
+        <div class="loader-brand">DEZOPAY<sup>™</sup></div>
         <?php endif; ?>
     </div>
     <?php endif; ?>
@@ -982,7 +982,7 @@
         <?php if (!$removeBranding && $displayHeaderFooter): ?>
         <!-- Footer -->
         <div class="footer">
-            Powered by <span class="footer-brand">UpiGateway<sup>™</sup></span>
+            Powered by <span class="footer-brand">DEZOPAY<sup>™</sup></span>
         </div>
         <?php endif; ?>
     </div>

@@ -121,7 +121,7 @@ echo "ðŸŽ¯ Single Connected merchants: $singleMerchantCount&nbsp;&nbsp;&nbsp;ðŸŽ
     <div class="form-group custom-checkbox-group d-flex align-items-start gap-2 mb-4">
         <input type="checkbox" name="vip_sub" class="vip_sub custom-checkbox" id="vip_sub_<?= $planid ?>" data-planid="<?= $planid ?>" value="yes" />
         <label for="vip_sub_<?= $planid ?>" class="custom-checkbox-label">
-            VIP Subscription (No UpiGateway Branding)
+            VIP Subscription (No DEZOPAY Branding)
         </label>
     </div>
 
@@ -297,7 +297,7 @@ $(document).ready(function () {
             // Check if the server response indicates success and has the payment URL
             if (data.status === true && data.result && data.result.payment_url) {
                 // Open the dialog with the URL from the response
-                openDialog(data.result.payment_url, 'UpiGateway Payment');
+                openDialog(data.result.payment_url, 'DEZOPAY Payment');
             } else {
                 // Handle cases where the status is false or the URL is missing
                 const errorMessage = data.message || 'Unknown error occurred.';

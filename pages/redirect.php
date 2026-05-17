@@ -25,7 +25,7 @@ $selectedTheme = $themes[array_rand($themes)];
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UpiGateway™ - Securely Redirecting...</title>
+    <title>DEZOPAY™ - Securely Redirecting...</title>
     <style>
         :root {
             /* General Variables */
@@ -351,7 +351,7 @@ $selectedTheme = $themes[array_rand($themes)];
 
     <div class="container">
         <div class="logo">
-            <span class="logo-text">UpiGateway<sup>™</sup></span>
+            <span class="logo-text">DEZOPAY<sup>™</sup></span>
         </div>
         
         <div class="loader">

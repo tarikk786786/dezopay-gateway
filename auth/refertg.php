@@ -161,7 +161,7 @@ foreach ($users as $user) {
         <div class="container mx-auto px-4 py-4">
             <div class="bg-white text-gray-800 rounded-lg p-6 shadow-lg animate-fadeIn">
                             <h1 class="text-3xl md:text-4xl font-bold animate-fadeIn">
-                UpiGateway™ <span class="text-yellow-300">Refer & Earn</span>
+                DEZOPAY™ <span class="text-yellow-300">Refer & Earn</span>
             </h1>
                 <h6 class="text-2xl font-semibold mb-6 text-center text-blue-600">How Refer & Earn Works</h6>
                 <div class="space-y-4 md:grid md:grid-cols-5 md:gap-4 md:space-y-0">
@@ -270,12 +270,12 @@ foreach ($users as $user) {
                     <div class="grid grid-cols-3 gap-2 mb-2">
                         <?php
                         $templates = [
-                            "🚀 *$sponcerName* ने UpiGateway™ को इसलिए चुना क्योंकि ₹199/month में GPay Intent, Fast Payment Panel और ₹0 Setup मिलता है! आप भी ट्राय करो 👉 $referralLink 📞 9876543210",
-                            "📲 *$sponcerName* की सलाह पर जॉइन करें UpiGateway™ – ₹199/month में 7+ App सपोर्ट, UPI Payment Links और Easy Integration 👉 $referralLink 📞 9876543210",
-                            "💼 अब digital भुगतान आसान – *$sponcerName* की तरह आप भी UpiGateway™ से जुड़ें ₹199/month में! Fast UPI + GPay Intent 👉 $referralLink 📞 9876543210",
-                            "✅ ₹199 में UPI Gateway? जी हां, *$sponcerName* जैसे हजारों व्यापारी UpiGateway™ यूज़ कर रहे हैं – GPay Intent, Reports और ₹0 Setup 👉 $referralLink 📞 9876543210",
-                            "🔥 ₹199/month में मिलेगा Fast Payment Panel, 7+ UPI App सपोर्ट और GPay Intent – *$sponcerName* ने तो UpiGateway™ पहले ही चुन लिया! 👉 $referralLink 📞 9876543210",
-                            "🌟  सबसे आसान और affordable विकल्प – *$sponcerName* के साथ जॉइन करें UpiGateway™ सिर्फ ₹199/month में 👉 $referralLink 📞 9876543210",
+                            "🚀 *$sponcerName* ने DEZOPAY™ को इसलिए चुना क्योंकि ₹199/month में GPay Intent, Fast Payment Panel और ₹0 Setup मिलता है! आप भी ट्राय करो 👉 $referralLink 📞 9876543210",
+                            "📲 *$sponcerName* की सलाह पर जॉइन करें DEZOPAY™ – ₹199/month में 7+ App सपोर्ट, UPI Payment Links और Easy Integration 👉 $referralLink 📞 9876543210",
+                            "💼 अब digital भुगतान आसान – *$sponcerName* की तरह आप भी DEZOPAY™ से जुड़ें ₹199/month में! Fast UPI + GPay Intent 👉 $referralLink 📞 9876543210",
+                            "✅ ₹199 में UPI Gateway? जी हां, *$sponcerName* जैसे हजारों व्यापारी DEZOPAY™ यूज़ कर रहे हैं – GPay Intent, Reports और ₹0 Setup 👉 $referralLink 📞 9876543210",
+                            "🔥 ₹199/month में मिलेगा Fast Payment Panel, 7+ UPI App सपोर्ट और GPay Intent – *$sponcerName* ने तो DEZOPAY™ पहले ही चुन लिया! 👉 $referralLink 📞 9876543210",
+                            "🌟  सबसे आसान और affordable विकल्प – *$sponcerName* के साथ जॉइन करें DEZOPAY™ सिर्फ ₹199/month में 👉 $referralLink 📞 9876543210",
                         ];
                         foreach ($templates as $index => $template) {
                         ?>
@@ -406,8 +406,8 @@ foreach ($users as $user) {
         function shareReferralLink() {
             if (navigator.share) {
                 navigator.share({
-                    title: 'UpiGateway™ Referral',
-                    text: 'Join UpiGateway™ with my code!',
+                    title: 'DEZOPAY™ Referral',
+                    text: 'Join DEZOPAY™ with my code!',
                     url: '<?= $referralLink; ?>'
                 }).then(() => {
                     alert('Link shared!');

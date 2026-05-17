@@ -213,13 +213,13 @@ $msg = "Dear $name thanks For Registering Us
 Your Username = $mobile
 Your Password = $password
 Thanks & Regards
-*UpiGateway™*";
+*DEZOPAY™*";
 
 
 $encodedMsg = urlencode($msg);
 
 // sendWA($mobile,$encodedMsg);
-sendNotification($mobile, $email, $msg, "Well-Come To UpiGateway Family");
+sendNotification($mobile, $email, $msg, "Well-Come To DEZOPAY Family");
 if ($result) {
 
 echo '

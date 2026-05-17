@@ -5,24 +5,112 @@ session_start();
 ?>
 
 <!DOCTYPE html>
-<html lang="en" class="light-style layout-wide customizer-hide" dir="ltr" data-theme="theme-default" data-assets-path="common/assets/" data-template="vertical-menu-template" data-style="light">
-
+<html lang="en">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
-<link rel="icon" href="https://pay.dezo.in/common/img/logoshild.png">
-<title><?php echo $site_settings['brand_name']; ?> | Login</title>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-<link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
-<link rel="stylesheet" href="../common/assets/vendor/css/pages/page-auth.css">
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-<script disable-devtool-auto="" src="https://cdn.jsdelivr.net/npm/disable-devtool@0.3.8/disable-devtool.min.js" data-url="https://www.google.com/"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Login | DEZOPAY Dashboard</title>
+    <link rel="icon" href="https://pay.dezo.in/common/img/logoshild.png">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+    
+    <!-- SweetAlert2 & Tailwind -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Inter', 'sans-serif'] },
+                    colors: { brand: { 400: '#8b84ff', 500: '#6c63ff', 600: '#534bea' }, accent: '#3b82f6' }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Disable DevTools -->
+    <script disable-devtool-auto="" src="https://cdn.jsdelivr.net/npm/disable-devtool@0.3.8/disable-devtool.min.js"></script>
+
+    <style>
+        body {
+            background: #0a0a14;
+            color: #fff;
+            overflow-x: hidden;
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .login-section {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+            position: relative;
+            overflow: hidden;
+        }
+        .login-section::before {
+            content: ''; position: absolute; inset: 0;
+            background: radial-gradient(ellipse at 20% 50%, rgba(108,99,255,.25) 0%, transparent 60%),
+                        radial-gradient(ellipse at 80% 20%, rgba(59,130,246,.2) 0%, transparent 50%);
+        }
+        .orb { position: absolute; border-radius: 50%; filter: blur(80px); animation: float 8s ease-in-out infinite; }
+        .orb1 { width: 400px; height: 400px; background: rgba(108,99,255,.2); top: -100px; right: -100px; }
+        .orb2 { width: 300px; height: 300px; background: rgba(59,130,246,.15); bottom: -50px; left: -50px; animation-delay: 3s; }
+        
+        @keyframes float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-30px); } }
+        
+        .login-card {
+            position: relative; z-index: 10; width: 100%; max-width: 440px; margin: 20px;
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 24px; padding: 48px 40px;
+            box-shadow: 0 25px 60px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.1);
+            animation: slideUp 0.8s ease-out;
+        }
+        @keyframes slideUp { from { opacity: 0; transform: translateY(40px); } to { opacity: 1; transform: translateY(0); } }
+        
+        .logo-icon {
+            width: 64px; height: 64px; border-radius: 16px; margin: 0 auto 16px;
+            display: flex; align-items: center; justify-content: center;
+            background: linear-gradient(135deg, #6c63ff, #3b82f6);
+            box-shadow: 0 8px 32px rgba(108,99,255,0.4); font-size: 28px;
+        }
+        
+        .form-input {
+            width: 100%; padding: 14px 16px; background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1); border-radius: 12px;
+            color: #fff; font-size: 14px; transition: all 0.3s; outline: none;
+        }
+        .form-input:focus {
+            border-color: #6c63ff; background: rgba(108,99,255,0.1);
+            box-shadow: 0 0 0 3px rgba(108,99,255,0.15);
+        }
+        .form-input::placeholder { color: rgba(255,255,255,0.3); }
+        
+        .login-btn {
+            width: 100%; padding: 16px; border: none; border-radius: 12px; cursor: pointer;
+            background: linear-gradient(135deg, #6c63ff, #3b82f6);
+            color: #fff; font-size: 15px; font-weight: 700; letter-spacing: 0.5px;
+            transition: all 0.3s; position: relative; overflow: hidden;
+        }
+        .login-btn:hover { transform: translateY(-2px); box-shadow: 0 12px 40px rgba(108,99,255,0.5); }
+        .login-btn:disabled { opacity: 0.7; cursor: not-allowed; transform: none; box-shadow: none; }
+        
+        .swal2-popup {
+            background: #1a1a2e !important;
+            border: 1px solid rgba(255,255,255,0.1);
+            color: white !important;
+            border-radius: 16px !important;
+        }
+        .swal2-title { color: white !important; }
+        .swal2-html-container { color: rgba(255,255,255,0.7) !important; }
+    </style>
 </head>
 
 <?php
-session_start();
-
 if (isset($_POST['submit'])) {
 
     $username = $_POST['username'];
@@ -45,9 +133,10 @@ if (isset($_POST['submit'])) {
                 title: "Account Locked!",
                 text: "Please contact the administrator.",
                 icon: "error",
+                confirmButtonColor: "#6c63ff",
                 confirmButtonText: "Ok"
             }).then(() => {
-                window.location.href = "index";
+                window.location.href = "index.php";
             });
             </script>';
             exit;
@@ -82,97 +171,106 @@ if (isset($_POST['submit'])) {
                     title: "Account Locked!",
                     text: "Too many failed login attempts. Please contact the administrator.",
                     icon: "error",
+                    confirmButtonColor: "#6c63ff",
                     confirmButtonText: "Ok"
                 }).then(() => {
-                    window.location.href = "index";
+                    window.location.href = "index.php";
                 });
                 </script>';
                 exit;
             }
 
-            echo '<script>Swal.fire("Invalid Password!", "Please try again.", "error");</script>';
+            echo '<script>Swal.fire({title: "Invalid Password!", text: "Please try again.", icon: "error", confirmButtonColor: "#6c63ff"});</script>';
         }
     } else {
-        echo '<script>Swal.fire("Invalid Username!", "No account found with this mobile number.", "error");</script>';
+        echo '<script>Swal.fire({title: "Invalid Username!", text: "No account found with this mobile number.", icon: "error", confirmButtonColor: "#6c63ff"});</script>';
     }
 }
 ?>
 
 <body>
-    <div class="auth-container">
-        <div class="auth-image">
-            <div class="left-logo">
-                <div class="brand-icon"><i class="ri-shield-check-line"></i></div>
-                <h3>DEZOPAY</h3>
-                <p>Accept payments through UPI, cards, QR codes, and payment links from one secure dashboard.</p>
+    <div class="login-section">
+        <div class="orb orb1"></div>
+        <div class="orb orb2"></div>
+        
+        <div class="login-card">
+            <div class="text-center mb-8">
+                <div class="logo-icon"><i class="fa-solid fa-credit-card"></i></div>
+                <div class="text-3xl font-black tracking-widest uppercase mb-1">
+                    <span class="text-white">DEZO</span><span class="text-brand-500">PAY</span>
+                </div>
+                <div class="text-sm text-gray-400">The Future of UPI Payments</div>
             </div>
-        </div>
 
-        <div class="auth-form">
-            <div class="reg-form-div">
-                <img src="<?php echo $site_settings['logo_url']; ?>" alt="Logo" class="logo img-fluid">
-                <h4 class="mb-1">Sign in to your account</h4>
-                <p class="mb-5">Access your merchant dashboard, transactions, and payment settings.</p>
-                <div id="toast-container" class="toast-container"></div>
-
-                <form id="formAuthentication" class="mb-3" action="index.php" method="POST">
-                    <div class="mb-1">
-                        <label for="mobileNumber" class="form-label">Mobile Number</label>
-                        <input type="text" class="form-control" id="mobileNumber" name="username" 
-                               placeholder="Enter your 10-digit mobile number" maxlength="10" 
-                               pattern="\d{10}" title="Please enter a valid 10-digit mobile number" required>
+            <form action="index.php" method="POST" id="loginForm">
+                <div class="mb-5">
+                    <label class="block text-[13px] font-medium text-gray-400 mb-2">Mobile Number</label>
+                    <input type="text" name="username" class="form-input" 
+                           placeholder="Enter your 10-digit mobile number" 
+                           maxlength="10" pattern="\d{10}" required>
+                </div>
+                
+                <div class="mb-6">
+                    <label class="block text-[13px] font-medium text-gray-400 mb-2">Password</label>
+                    <div class="relative">
+                        <input type="password" id="password" name="password" class="form-input pr-12" 
+                               placeholder="••••••••••••" required>
+                        <span id="togglePassword" class="absolute right-4 top-1/2 -translate-y-1/2 cursor-pointer text-gray-400 hover:text-white transition-colors">
+                            <i class="fa-solid fa-eye-slash"></i>
+                        </span>
                     </div>
-                    <div class="mb-3">
-                        <label for="password" class="form-label">Password</label>
-                        <div class="input-group">
-                            <input type="password" class="form-control" id="password" name="password" 
-                                   placeholder="••••••••••••" aria-describedby="password" required>
-                            <span class="input-group-text cursor-pointer" id="togglePassword">
-                                <i class="ri-eye-off-line"></i>
-                            </span>
-                        </div>
-                    </div>
-                    <div class="mb-3 d-flex justify-content-between flex-wrap">
-                        <div class="form-check mb-0">
-                            <label class="form-check-label me-2" for="remember-me">
-                                <input type="checkbox" id="remember-me" required>
-                                Accept <a href="../tc">Terms & Conditions</a>
-                            </label>
-                            <a href="../forgot-password"> Forgot Password</a>
-                        </div>
-                    </div>
-                    <button class="btn btn-primary w-100" type="submit" id="loginBtn" name="submit">Login</button>
-                </form>
+                </div>
 
-                <div class="secure-badge"><i class="ri-lock-line"></i> Secured with SSL encryption</div>
+                <div class="flex items-center justify-between text-xs text-gray-400 mb-6">
+                    <label class="flex items-center gap-2 cursor-pointer hover:text-gray-300 transition-colors">
+                        <input type="checkbox" required class="w-4 h-4 accent-brand-500 rounded bg-gray-800 border-gray-700">
+                        <span>Accept Terms & Conditions</span>
+                    </label>
+                    <a href="../forgot-password" class="text-brand-400 hover:text-brand-300 font-semibold transition-colors">Forgot Password?</a>
+                </div>
 
-                <p class="text-center" style="margin-top:16px">
-                    New to DEZOPAY? <a href="../Register" class="text-primary">Create an account</a>
-                </p>
+                <button type="submit" name="submit" id="loginBtn" class="login-btn mb-6">
+                    <span id="btnText"><i class="fa-solid fa-rocket mr-2"></i> Login to DEZOPAY</span>
+                    <span id="btnLoader" class="hidden"><i class="fa-solid fa-circle-notch fa-spin mr-2"></i> Authenticating...</span>
+                </button>
+            </form>
+
+            <div class="text-center text-[13px] text-gray-400">
+                New to DEZOPAY? <a href="../Register.php" class="text-brand-400 hover:text-brand-300 font-semibold transition-colors">Create an account</a>
+            </div>
+            
+            <div class="mt-8 flex items-center justify-center gap-2 text-[11px] text-gray-500 font-medium">
+                <i class="fa-solid fa-shield-halved"></i>
+                <span>Secured with 256-bit SSL encryption</span>
             </div>
         </div>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-        // Login Button Spinner
-        document.getElementById('loginBtn').addEventListener('click', function(event) {
-            this.innerHTML = '<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Processing...';
-            this.form.submit();
-            this.disabled = true;
+        // Password Visibility Toggle
+        document.getElementById('togglePassword').addEventListener('click', function() {
+            const pwd = document.getElementById('password');
+            const icon = this.querySelector('i');
+            if (pwd.type === 'password') {
+                pwd.type = 'text';
+                icon.classList.remove('fa-eye-slash');
+                icon.classList.add('fa-eye');
+            } else {
+                pwd.type = 'password';
+                icon.classList.remove('fa-eye');
+                icon.classList.add('fa-eye-slash');
+            }
         });
 
-        // Password Toggle
-        document.getElementById('togglePassword').addEventListener('click', function() {
-            const password = document.getElementById('password');
-            const icon = this.querySelector('i');
-            if (password.type === 'password') {
-                password.type = 'text';
-                icon.classList.replace('ri-eye-off-line', 'ri-eye-line');
-            } else {
-                password.type = 'password';
-                icon.classList.replace('ri-eye-line', 'ri-eye-off-line');
-            }
+        // Form Submit Loader
+        document.getElementById('loginForm').addEventListener('submit', function() {
+            const btn = document.getElementById('loginBtn');
+            const text = document.getElementById('btnText');
+            const loader = document.getElementById('btnLoader');
+            
+            btn.disabled = true;
+            text.classList.add('hidden');
+            loader.classList.remove('hidden');
         });
     </script>
 </body>

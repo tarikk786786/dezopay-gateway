@@ -616,7 +616,7 @@
             <div class="loader-dot"></div>
         </div>
         <?php if (!$removeBranding): ?>
-        <div class="loader-brand">UpiGateway<sup>™</sup></div>
+        <div class="loader-brand">DEZOPAY<sup>™</sup></div>
         <?php endif; ?>
         <div class="loader-status-text">Initializing Secure Connection...</div>
     </div>
@@ -797,7 +797,7 @@
             <?php if (!$removeBranding): ?>
                 <div class="powered-by">
                     Powered by 
-                    <span class="font-semibold">UpiGateway<sup>™</sup></span>
+                    <span class="font-semibold">DEZOPAY<sup>™</sup></span>
                 </div>
             <?php endif; ?>
         </footer>

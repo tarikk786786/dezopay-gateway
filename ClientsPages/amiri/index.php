@@ -64,7 +64,7 @@ if (isset($_POST['upiapi'])) {
         "order_id" => $randomOrderId,
         "txn_amount" => $txn_amount,
         "txn_note" => $txn_note,
-        "product_name" => "UpiGateway Subscription",
+        "product_name" => "DEZOPAY Subscription",
         "customer_name" => $customer_name,
         "customer_mobile" => $customer_mobile,
         "customer_email" => $customer_email,
@@ -90,7 +90,7 @@ if (isset($_POST['upiapi'])) {
     curl_close($curl);
 
     if ($error) {
-        $error_message = 'Unable to connect to UpiGateway. Please try again later.';
+        $error_message = 'Unable to connect to DEZOPAY. Please try again later.';
     } else {
         $result = json_decode($response, true);
         if ($result['status'] == "true") {
@@ -107,7 +107,7 @@ if (isset($_POST['upiapi'])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UpiGateway™ - Simplifying Digital Payments</title>
+    <title>DEZOPAY™ - Simplifying Digital Payments</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <style>
         @keyframes fadeIn {
@@ -173,7 +173,7 @@ if (isset($_POST['upiapi'])) {
         <!--</div>-->
 
         <footer class="mt-8 text-center text-sm text-gray-500">
-            Powered by <a href="https://pay.dezo.in" class="text-blue-600 hover:underline">UpiGateway™</a> - Simplifying Digital Payments<br>
+            Powered by <a href="https://pay.dezo.in" class="text-blue-600 hover:underline">DEZOPAY™</a> - Simplifying Digital Payments<br>
             
         </footer>
     </div>

@@ -1079,7 +1079,7 @@ body {
 
 
         <?php if (!$removeBranding && $displayHeaderFooter): ?>
-            <div class="footer">Powered by <span class="font-semibold">UpiGateway™</span></div>
+            <div class="footer">Powered by <span class="font-semibold">DEZOPAY™</span></div>
         <?php endif; ?>
     </main>
 

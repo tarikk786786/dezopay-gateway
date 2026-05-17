@@ -484,7 +484,7 @@
             
             <div id="loader" class="loader-container flex flex-col items-center justify-center h-full">
                 <?php if (!$removeBranding): ?>
-                <div class="loader-logo text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-orange-500 to-red-600 animate-pulse">UpiGateway<sup style="font-size: 0.8em; color: #FF4500;">™</sup></div>
+                <div class="loader-logo text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-orange-500 to-red-600 animate-pulse">DEZOPAY<sup style="font-size: 0.8em; color: #FF4500;">™</sup></div>
                 <?php endif; ?>
                 <div class="loader relative">
                     <div class="absolute inset-0 bg-gradient-to-r from-blue-400 to-purple-500 opacity-20 rounded-full animate-pulse"></div>
@@ -700,7 +700,7 @@
         <div class="powered-by text-sm">
             Powered by 
             <span class="text-orange-500 font-semibold">
-                UpiGateway<sup class="text-xs">™</sup>
+                DEZOPAY<sup class="text-xs">™</sup>
             </span>
         </div>
     <?php endif; ?>

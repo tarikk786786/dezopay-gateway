@@ -33,7 +33,7 @@
         . "🛑 Your plan is *$xstatus* on *$expiryDate*.\n"
         . "🔄 Please renew your subscription to avoid service interruption.\n\n"
         . "👉 *Renew Now*: https://$server/auth/subscription\n\n"
-        . " >Team UpiGateway\n\n"
+        . " >Team DEZOPAY\n\n"
         . "`Thanks for using our services!`";
     // URL एन्कोड करें
 $emailMessage = "
@@ -74,7 +74,7 @@ $emailMessage = "
         error_log("sendWA function is not defined.");
     }
     if (function_exists('sendEmail')) {
-        // if (!sendEmail($email, "UpiGateway Alert", $emailMessage)) {
+        // if (!sendEmail($email, "DEZOPAY Alert", $emailMessage)) {
         //     error_log("Failed to send message to $email");
         // }
     } else {
