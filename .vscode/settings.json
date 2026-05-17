@@ -1,0 +1,38 @@
+{
+  "php.validate.executablePath": "/usr/bin/php",
+  "intelephense.environment.phpVersion": "8.3.0",
+  "intelephense.files.maxSize": 5000000,
+  "files.associations": {
+    "*.php": "php",
+    ".env": "dotenv",
+    ".env.example": "dotenv",
+    "*.nix": "nix"
+  },
+  "editor.formatOnSave": true,
+  "editor.tabSize": 4,
+  "editor.detectIndentation": true,
+  "[php]": {
+    "editor.tabSize": 4,
+    "editor.defaultFormatter": "bmewburn.vscode-intelephense-client"
+  },
+  "[javascript]": {
+    "editor.tabSize": 2
+  },
+  "[css]": {
+    "editor.tabSize": 2
+  },
+  "[html]": {
+    "editor.tabSize": 2
+  },
+  "files.exclude": {
+    "**/.git": true,
+    "**/vendor": true,
+    "**/node_modules": true
+  },
+  "search.exclude": {
+    "**/vendor": true,
+    "**/node_modules": true,
+    "**/*.min.js": true,
+    "**/*.min.css": true
+  }
+}

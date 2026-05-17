@@ -1,0 +1,11 @@
+{
+  "recommendations": [
+    "bmewburn.vscode-intelephense-client",
+    "xdebug.php-debug",
+    "ecmel.vscode-html-css",
+    "mikestead.dotenv",
+    "cweijan.vscode-mysql-client2",
+    "EditorConfig.EditorConfig",
+    "dbaeumer.vscode-eslint"
+  ]
+}

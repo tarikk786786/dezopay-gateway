@@ -18,7 +18,8 @@ composer.lock
 error_log
 
 # --- Database dumps ---
-*.sql
+# Note: schema/ directory IS tracked for Firebase Studio setup
+*.sql.gz
 
 # --- OS Files ---
 .DS_Store
@@ -29,12 +30,18 @@ Desktop.ini
 *~
 
 # --- IDE / Editor ---
-.vscode/
 .idea/
 *.sublime-project
 *.sublime-workspace
 .project
 .settings/
+
+# --- Keep shared VS Code config ---
+# .vscode/ is tracked for Firebase Studio compatibility
+# But ignore personal user state files
+.vscode/*.code-workspace
+.vscode/.ropeproject
+.vscode/launch.json
 
 # --- ZIP / Archives ---
 *.zip
@@ -51,3 +58,6 @@ Desktop.ini
 
 # --- Node (if any) ---
 node_modules/
+
+# --- Firebase Studio state ---
+.idx/.data/
