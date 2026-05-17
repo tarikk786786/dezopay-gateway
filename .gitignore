@@ -61,3 +61,5 @@ node_modules/
 
 # --- Firebase Studio state ---
 .idx/.data/
+
+.vercel
