@@ -6,205 +6,311 @@ include 'imb-header1.php';
     <!-- Main Content -->
     <main>
         <!-- Terms and Conditions Section -->
-        <section class="terms-conditions pt-80 pb-80">
+        <section class="terms-conditions pt-120 pb-120">
             <div class="container">
-                <div class="row">
-                    <div class="col-lg-12">
+                <div class="row justify-content-center">
+                    <div class="col-lg-10">
                         <div class="terms-content">
-                            <h2 class="text-center mb-50">Terms and Conditions</h2>
+                            <div class="terms-header text-center mb-50">
+                                <span class="premium-badge mb-15">LEGAL AGREEMENT</span>
+                                <h2>Terms and Conditions</h2>
+                                <p class="terms-subtitle">Please read these terms carefully before using the DEZOPAY payment services.</p>
+                            </div>
                             
                             <div class="terms-section">
                                 <h4>1. Acceptance of Terms</h4>
-                                <p>By accessing or using imb Pay's UPI payment services ("Services"), you agree to be bound by these Terms and Conditions ("Terms"). If you do not agree to all terms, you may not use our Services.</p>
+                                <p>By accessing or using DEZOPAY's UPI payment gateway services ("Services"), you agree to be bound by these Terms and Conditions ("Terms"). If you do not agree to all terms, you may not use our Services. These Terms constitute a binding legal agreement between you (the "Merchant" or "User") and DEZOPAY, under the directorship of Tarik Islam.</p>
                             </div>
                             
                             <div class="terms-section">
                                 <h4>2. Service Description</h4>
-                                <p>imb Pay provides:</p>
+                                <p>DEZOPAY provides a high-performance, secure digital payment gateway offering:</p>
                                 <ul>
-                                    <li>UPI payment processing services</li>
-                                    <li>Merchant account facilities</li>
-                                    <li>Payment gateway integration</li>
-                                    <li>Transaction reporting and analytics</li>
+                                    <li>UPI payment processing services and instant settlement routing</li>
+                                    <li>Merchant portal dashboard and transaction analytics</li>
+                                    <li>Payment gateway APIs and checkout page integration</li>
+                                    <li>Automated UTR and QR code generation facilities</li>
                                 </ul>
-                                <p>All services are subject to RBI guidelines and NPCI regulations.</p>
+                                <p>All services are subject to reserve guidelines issued by the Reserve Bank of India (RBI) and regulations formulated by the National Payments Corporation of India (NPCI).</p>
                             </div>
                             
                             <div class="terms-section">
-                                <h4>3. Account Registration</h4>
-                                <p>To use our Services, you must:</p>
+                                <h4>3. Account Registration & KYC</h4>
+                                <p>To utilize our payment gateway services, you must register a merchant account and comply with the following conditions:</p>
                                 <ul>
-                                    <li>Provide accurate and complete registration information</li>
-                                    <li>Be at least 18 years old</li>
-                                    <li>Have legal authority to bind your business (for merchants)</li>
-                                    <li>Complete KYC verification as required</li>
+                                    <li>Provide absolute, accurate, and complete registration information</li>
+                                    <li>Be at least 18 years of age with full legal capacity</li>
+                                    <li>Possess authorized signing capacity to bind your business entity</li>
+                                    <li>Complete full Know Your Customer (KYC) verification including business PAN, bank details, and identity documents as required by regulatory mandates</li>
                                 </ul>
-                                <p>You are responsible for maintaining the confidentiality of your account credentials.</p>
+                                <p>You are solely responsible for maintaining the strict confidentiality of your account credentials and api keys.</p>
                             </div>
                             
                             <div class="terms-section">
                                 <h4>4. Prohibited Activities</h4>
-                                <p>You agree not to:</p>
+                                <p>Users and merchants explicitly agree not to use DEZOPAY for:</p>
                                 <ul>
-                                    <li>Use the Services for illegal activities or prohibited businesses</li>
-                                    <li>Attempt to circumvent security measures</li>
-                                    <li>Initiate fraudulent or unauthorized transactions</li>
-                                    <li>Use bots, scrapers, or other automated tools</li>
-                                    <li>Violate any applicable laws or regulations</li>
+                                    <li>Engaging in illegal activities, unauthorized sales, or prohibited business categories</li>
+                                    <li>Attempting to bypass, reverse engineer, or compromise the gateway's security infrastructure</li>
+                                    <li>Initiating, facilitating, or shielding fraudulent transactions</li>
+                                    <li>Deploying scrapers, bots, automated request tools, or unauthorized testing scripts</li>
+                                    <li>Violating any local, national, or international financial laws and regulations</li>
                                 </ul>
                             </div>
                             
                             <div class="terms-section">
                                 <h4>5. Transaction Processing</h4>
-                                <p>All transactions are subject to:</p>
+                                <p>All transactions processed through DEZOPAY are governed by:</p>
                                 <ul>
-                                    <li>UPI transaction limits as set by RBI/NPCI</li>
-                                    <li>Fraud screening and risk assessment</li>
-                                    <li>Bank processing times and availability</li>
-                                    <li>Merchant-specific terms where applicable</li>
+                                    <li>UPI transaction limits and restrictions set by the RBI, NPCI, or processing partner banks</li>
+                                    <li>Continuous fraud screening, velocity limit checks, and real-time risk assessment</li>
+                                    <li>Bank settlement clearance schedules and availability</li>
                                 </ul>
-                                <p>imb Pay is not responsible for errors caused by incorrect payment details provided by users.</p>
+                                <p>DEZOPAY is not liable or responsible for transaction failures, delays, or errors arising from incorrect details supplied by the customer or bank server disruptions.</p>
                             </div>
                             
                             <div class="terms-section">
                                 <h4>6. Fees and Charges</h4>
-                                <p>Our fee structure includes:</p>
+                                <p>Our transparent fee structure is defined as follows:</p>
                                 <ul>
-                                    <li><strong>UPI Transactions:</strong> 0% fees (unless otherwise specified)</li>
-                                    <li><strong>Chargebacks:</strong> ₹200 per instance</li>
-                                    <li><strong>Premium Features:</strong> As per current pricing</li>
+                                    <li><strong>UPI Transactions:</strong> 0% processing fees (unless premium enterprise routing is selected)</li>
+                                    <li><strong>Disputed / Fraud Chargeback Handling:</strong> ₹200 per dispute instance</li>
+                                    <li><strong>Premium Features / Add-ons:</strong> Subject to standard pricing listed on the platform</li>
                                 </ul>
-                                <p>We reserve the right to modify fees with 30 days notice.</p>
+                                <p>We reserve the right to modify our service fee schedule by providing 30 days prior notice via email.</p>
                             </div>
                             
                             <div class="terms-section">
                                 <h4>7. Settlement to Merchants</h4>
-                                <p>Settlement terms:</p>
+                                <p>Settlement guidelines are as follows:</p>
                                 <ul>
-                                    <li>Standard settlement: T+1 business days</li>
-                                    <li>Minimum settlement amount: ₹500</li>
-                                    <li>Settlement only to verified bank accounts</li>
-                                    <li>Holidays may delay processing</li>
+                                    <li>Standard settlement: T+1 business days (transferred to your registered bank account)</li>
+                                    <li>Minimum settlement threshold: ₹500</li>
+                                    <li>Settlements are only made to verified, active bank accounts matching your registration details</li>
+                                    <li>National holidays and banking closures may delay settlement cycles</li>
                                 </ul>
                             </div>
                             
                             <div class="terms-section">
                                 <h4>8. Dispute Resolution</h4>
-                                <p>For transaction disputes:</p>
+                                <p>For transaction disputes and customer complaints:</p>
                                 <ol>
-                                    <li>Contact the merchant directly first</li>
-                                    <li>Submit dispute through imb Pay dashboard within 60 days</li>
-                                    <li>Provide all relevant transaction details</li>
-                                    <li>imb Pay will mediate and make final determination</li>
+                                    <li>We advise buyers to contact the merchant directly to resolve standard delivery issues</li>
+                                    <li>Merchants and buyers can file formal disputes through the DEZOPAY support desk within 60 days of the transaction</li>
+                                    <li>All relevant transaction receipts and UTR numbers must be provided for claim verification</li>
+                                    <li>DEZOPAY reserves the final right of mediation to resolve disputed claims</li>
                                 </ol>
                             </div>
                             
                             <div class="terms-section">
-                                <h4>9. Liability Limitations</h4>
-                                <p>imb Pay's liability is limited to:</p>
+                                <h4>9. Limitation of Liability</h4>
+                                <p>DEZOPAY's cumulative liability under any circumstances is strictly limited to:</p>
                                 <ul>
-                                    <li>Direct damages up to the transaction amount</li>
-                                    <li>Cases of proven negligence on our part</li>
+                                    <li>The specific transaction amount out of which the direct dispute arose</li>
+                                    <li>Proven direct losses caused solely by the willful neglect of our platform</li>
                                 </ul>
-                                <p>We are not liable for:</p>
+                                <p>DEZOPAY, its directors, and affiliates shall not be held liable for:</p>
                                 <ul>
-                                    <li>Third party actions or failures</li>
-                                    <li>Force majeure events</li>
-                                    <li>Indirect, consequential, or punitive damages</li>
+                                    <li>Failures or downtime caused by NPCI, bank servers, or payment service providers</li>
+                                    <li>Acts of God, force majeure events, or regulatory shutdowns</li>
+                                    <li>Indirect, incidental, special, or consequential damages (including loss of profits)</li>
                                 </ul>
                             </div>
                             
                             <div class="terms-section">
-                                <h4>10. Termination</h4>
-                                <p>We may terminate or suspend your account:</p>
+                                <h4>10. Suspension & Termination</h4>
+                                <p>We reserve the right to suspend or terminate merchant accounts immediately for:</p>
                                 <ul>
-                                    <li>For violation of these Terms</li>
-                                    <li>Upon regulatory requirement</li>
-                                    <li>For prolonged inactivity (12+ months)</li>
+                                    <li>Any material violation of these Terms or our acceptable use guidelines</li>
+                                    <li>Sudden high volumes of suspicious, fraudulent, or chargeback-heavy transactions</li>
+                                    <li>Orders from state, federal, or regulatory authorities</li>
+                                    <li>Inactivity exceeding 12 consecutive months</li>
                                 </ul>
-                                <p>You may terminate your account by written notice with 30 days notice.</p>
                             </div>
                             
                             <div class="terms-section">
                                 <h4>11. Governing Law</h4>
-                                <p>These Terms shall be governed by Indian law. Any disputes shall be subject to the exclusive jurisdiction of courts in [Your City], India.</p>
+                                <p>These Terms and Conditions shall be governed by and construed in accordance with the laws of India. Any disputes arising out of or in connection with these Services shall be subject to the exclusive jurisdiction of the competent courts in Odisha, India.</p>
                             </div>
                             
                             <div class="terms-section">
                                 <h4>12. Amendments</h4>
-                                <p>We may modify these Terms periodically. Continued use after changes constitutes acceptance. We will notify users of material changes.</p>
+                                <p>DEZOPAY reserves the right to amend these Terms at any time. Continued usage of the Services after modifications are posted constitutes absolute acceptance of the revised Terms.</p>
                             </div>
                             
                             <div class="terms-section">
                                 <h4>13. Contact Information</h4>
-                                <p>For questions about these Terms:</p>
-                                <p>Email: legal@pay.garudhub.in<br>
-                                Address: [Your Registered Office Address]<br>
-                                Phone: +91 XXXXXXXXXX</p>
+                                <p>For any inquiries regarding these Terms and Conditions, please contact us at:</p>
+                                <div class="contact-card">
+                                    <p><strong>DEZOPAY Payment Gateway</strong></p>
+                                    <p>Email: <a href="mailto:legal@dezopay.com">legal@dezopay.com</a></p>
+                                    <p>Address: Odisha, India</p>
+                                    <p>Phone: +91 9114411026</p>
+                                </div>
                             </div>
                             
-                            <p class="terms-update">Effective Date: [Insert Date]</p>
+                            <p class="terms-update">Last Updated: May 17, 2026</p>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
-
     </main>
     <!-- Main Content End -->
 
 <?php include 'imb-footer1.php'; ?>
 
 <style>
-    /* Terms and Conditions Styles */
+    /* Terms and Conditions Premium Dark Styles */
     .terms-conditions {
-        background-color: #f9f9ff;
+        background-color: var(--bg-main);
+        position: relative;
     }
+    
+    .terms-conditions::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100%;
+        height: 100%;
+        background: radial-gradient(circle at top, rgba(212, 175, 55, 0.08) 0%, rgba(5, 5, 5, 0) 70%);
+        pointer-events: none;
+    }
+    
     .terms-content {
-        background: white;
-        padding: 40px;
-        border-radius: 10px;
-        box-shadow: 0 5px 30px rgba(0,0,0,0.05);
+        background: var(--card-bg);
+        border: 1px solid var(--border);
+        padding: 50px;
+        border-radius: 16px;
+        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
     }
+    
+    .premium-badge {
+        display: inline-block;
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 2px;
+        color: var(--primary);
+        background: rgba(212, 175, 55, 0.1);
+        padding: 6px 16px;
+        border-radius: 20px;
+        border: 1px solid rgba(212, 175, 55, 0.2);
+        text-transform: uppercase;
+    }
+    
     .terms-content h2 {
-        color: #2a2a2a;
-        font-size: 32px;
-        margin-bottom: 30px;
-    }
-    .terms-section {
-        margin-bottom: 30px;
-    }
-    .terms-section h4 {
-        color: #6e8efb;
-        font-size: 20px;
+        color: var(--accent) !important;
+        font-size: 38px;
+        font-weight: 800;
         margin-bottom: 15px;
-        padding-bottom: 8px;
-        border-bottom: 1px solid #eee;
     }
+    
+    .terms-subtitle {
+        font-size: 16px;
+        color: var(--text-secondary) !important;
+        max-width: 600px;
+        margin: 0 auto;
+    }
+    
+    .terms-section {
+        margin-top: 40px;
+        margin-bottom: 40px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        padding-bottom: 30px;
+    }
+    
+    .terms-section:last-of-type {
+        border-bottom: none;
+        padding-bottom: 0;
+    }
+    
+    .terms-section h4 {
+        color: var(--primary) !important;
+        font-size: 20px;
+        font-weight: 700;
+        margin-bottom: 20px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+    
     .terms-section p {
-        color: #555;
+        color: var(--text-secondary) !important;
         line-height: 1.8;
         margin-bottom: 15px;
+        font-size: 15px;
     }
+    
     .terms-section ul, .terms-section ol {
         margin-left: 20px;
-        margin-bottom: 15px;
+        margin-bottom: 20px;
     }
+    
     .terms-section li {
-        color: #555;
+        color: var(--text-secondary) !important;
         line-height: 1.8;
-        margin-bottom: 8px;
+        margin-bottom: 10px;
+        font-size: 14.5px;
+        position: relative;
     }
+    
+    .terms-section ul li::marker {
+        color: var(--primary);
+    }
+    
+    .contact-card {
+        background: rgba(255, 255, 255, 0.02);
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        padding: 25px;
+        margin-top: 20px;
+        max-width: 500px;
+    }
+    
+    .contact-card p {
+        margin-bottom: 8px;
+        font-size: 14.5px;
+    }
+    
+    .contact-card p strong {
+        color: var(--accent);
+        font-size: 16px;
+    }
+    
+    .contact-card a {
+        color: var(--primary);
+        text-decoration: none;
+        transition: all 0.3s ease;
+    }
+    
+    .contact-card a:hover {
+        color: var(--primary-soft);
+        text-shadow: 0 0 10px rgba(212, 175, 55, 0.2);
+    }
+    
     .terms-update {
         text-align: right;
         font-style: italic;
-        color: #888;
+        color: rgba(255, 255, 255, 0.3) !important;
         margin-top: 40px;
+        font-size: 13px;
+    }
+    
+    @media (max-width: 991px) {
+        .terms-content {
+            padding: 35px;
+        }
+        .terms-content h2 {
+            font-size: 30px;
+        }
     }
     
     @media (max-width: 767px) {
         .terms-content {
             padding: 25px;
+            border-radius: 12px;
         }
         .terms-content h2 {
             font-size: 26px;

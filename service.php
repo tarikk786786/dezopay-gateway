@@ -113,14 +113,14 @@ include 'imb-header1.php';
         </section>
 
         <!-- How It Works Section -->
-        <section class="works-section">
+        <section class="works-section pt-100 pb-70">
             <div class="container">
                 <div class="row justify-content-center">
                     <div class="col-lg-8">
                         <div class="section-title text-center mb-60">
-                            <span class="sub-title">Process</span>
-                            <h2 class="title">How imb Pay <span>Works</span></h2>
-                            <p>Get started with imb Pay in just a few simple steps and start accepting UPI payments immediately.</p>
+                            <span class="sub-title" style="color: var(--primary); font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; display: block; margin-bottom: 12px;">Process</span>
+                            <h2 class="title" style="font-weight: 800; font-size: 38px;">How DEZOPAY <span>Works</span></h2>
+                            <p style="color: var(--text-secondary); max-width: 600px; margin: 15px auto 0;">Get started with DEZOPAY in just a few simple steps and start accepting UPI payments immediately.</p>
                         </div>
                     </div>
                 </div>
@@ -129,7 +129,7 @@ include 'imb-header1.php';
                         <div class="work-step">
                             <div class="step-number">1</div>
                             <h4>Create Your Account</h4>
-                            <p>Register as a merchant on imb Pay with your basic business details. Get instant approval in just 2 minutes with minimal documentation.</p>
+                            <p>Register as a merchant on DEZOPAY with your basic business details. Get instant approval in just 2 minutes with minimal documentation.</p>
                         </div>
                     </div>
                     <div class="col-lg-6">
@@ -143,7 +143,7 @@ include 'imb-header1.php';
                         <div class="work-step">
                             <div class="step-number">3</div>
                             <h4>Integrate with Your Platform</h4>
-                            <p>Follow our simple integration guide to connect imb Pay with your website, app or business system in minutes.</p>
+                            <p>Follow our simple integration guide to connect DEZOPAY with your website, app or business system in minutes.</p>
                         </div>
                     </div>
                     <div class="col-lg-6">
@@ -158,51 +158,51 @@ include 'imb-header1.php';
         </section>
 
         <!-- Benefits Section -->
-        <section class="pt-100 pb-70">
+        <section class="pt-100 pb-70" style="background: var(--bg-secondary); border-top: 1px solid var(--border);">
             <div class="container">
                 <div class="row justify-content-center">
                     <div class="col-lg-8">
                         <div class="section-title text-center mb-60">
-                            <span class="sub-title">Advantages</span>
-                            <h2 class="title">Why Businesses Choose <span>imb Pay</span></h2>
-                            <p>Discover the unique benefits that make imb Pay the preferred payment gateway for thousands of Indian businesses.</p>
+                            <span class="sub-title" style="color: var(--primary); font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; display: block; margin-bottom: 12px;">Advantages</span>
+                            <h2 class="title" style="font-weight: 800; font-size: 38px;">Why Businesses Choose <span>DEZOPAY</span></h2>
+                            <p style="color: var(--text-secondary); max-width: 600px; margin: 15px auto 0;">Discover the unique benefits that make DEZOPAY the preferred payment gateway for thousands of Indian businesses.</p>
                         </div>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-lg-4 col-md-6">
                         <div class="benefit-card">
-                            <h4><img loading="lazy" src="newassets/img/icon/zero_fee_icon.png" alt=""> 0% Transaction Fees</h4>
+                            <h4><img loading="lazy" src="newassets/img/icon/zero_fee_icon.png" alt="" style="filter: sepia(1) saturate(5) hue-rotate(5deg);"> 0% Transaction Fees</h4>
                             <p>Enjoy zero transaction fees on all UPI payments, helping you save significantly compared to other payment methods.</p>
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-6">
                         <div class="benefit-card">
-                            <h4><img loading="lazy" src="newassets/img/icon/instant_icon.png" alt=""> Instant Activation</h4>
+                            <h4><img loading="lazy" src="newassets/img/icon/instant_icon.png" alt="" style="filter: sepia(1) saturate(5) hue-rotate(5deg);"> Instant Activation</h4>
                             <p>Get your merchant account activated in just 2 minutes with minimal documentation and no setup fees.</p>
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-6">
                         <div class="benefit-card">
-                            <h4><img loading="lazy" src="newassets/img/icon/settlement_icon.png" alt=""> Same Day Settlement</h4>
+                            <h4><img loading="lazy" src="newassets/img/icon/settlement_icon.png" alt="" style="filter: sepia(1) saturate(5) hue-rotate(5deg);"> Same Day Settlement</h4>
                             <p>Receive payments directly in your bank account on the same day, unlike other gateways that take 1-2 days.</p>
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-6">
                         <div class="benefit-card">
-                            <h4><img loading="lazy" src="newassets/img/icon/support_icon.png" alt=""> 24/7 Support</h4>
+                            <h4><img loading="lazy" src="newassets/img/icon/support_icon.png" alt="" style="filter: sepia(1) saturate(5) hue-rotate(5deg);"> 24/7 Support</h4>
                             <p>Get dedicated WhatsApp support for all your queries, with average response time under 15 minutes.</p>
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-6">
                         <div class="benefit-card">
-                            <h4><img loading="lazy" src="newassets/img/icon/security_benefit_icon.png" alt=""> Bank-Grade Security</h4>
+                            <h4><img loading="lazy" src="newassets/img/icon/security_benefit_icon.png" alt="" style="filter: sepia(1) saturate(5) hue-rotate(5deg);"> Bank-Grade Security</h4>
                             <p>Enterprise-level security with PCI DSS compliance, 3D Secure authentication and fraud monitoring.</p>
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-6">
                         <div class="benefit-card">
-                            <h4><img loading="lazy" src="newassets/img/icon/developer_icon.png" alt=""> Developer Friendly</h4>
+                            <h4><img loading="lazy" src="newassets/img/icon/developer_icon.png" alt="" style="filter: sepia(1) saturate(5) hue-rotate(5deg);"> Developer Friendly</h4>
                             <p>Comprehensive API documentation with code samples in multiple programming languages for easy integration.</p>
                         </div>
                     </div>
@@ -211,15 +211,15 @@ include 'imb-header1.php';
         </section>
 
         <!-- CTA Section -->
-        <section class="cta-area pt-80 pb-80" style="background: linear-gradient(135deg, #6e8efb 0%, #a777e3 100%);">
+        <section class="cta-area pt-80 pb-80" style="background: linear-gradient(135deg, #151515 0%, #0E0E0E 100%); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);">
             <div class="container">
                 <div class="row align-items-center">
                     <div class="col-lg-8">
-                        <h2 style="color: white; margin-bottom: 20px;">Ready to Transform Your Payment Experience?</h2>
-                        <p style="color: rgba(255,255,255,0.9); max-width: 600px;">Join thousands of businesses already using imb Pay for seamless, secure and cost-effective UPI payments.</p>
+                        <h2 style="color: var(--accent) !important; margin-bottom: 20px; font-weight: 800; font-size: 36px;">Ready to Transform Your Payment Experience?</h2>
+                        <p style="color: var(--text-secondary) !important; max-width: 600px; font-size: 16px;">Join thousands of businesses already using DEZOPAY for seamless, secure and cost-effective UPI payments.</p>
                     </div>
                     <div class="col-lg-4 text-lg-end">
-                        <a href="merchant/register" class="btn" style="background-color: white; color: #6e8efb;">Get Started Now</a>
+                        <a href="merchant/register" class="btn" style="background: var(--primary) !important; color: var(--bg-main) !important; border: 1px solid var(--primary) !important; font-weight: 700; padding: 15px 35px; border-radius: 8px; font-size: 16px; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(212, 175, 55, 0.25);">Get Started Now</a>
                     </div>
                 </div>
             </div>
@@ -228,130 +228,4 @@ include 'imb-header1.php';
     </main>
     <!-- Main Content End -->
 
-    <!-- Footer Area -->
-    <footer>
-        <div class="footer-area">
-            <div class="footer-top">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-3 col-sm-6">
-                            <div class="footer-widget">
-                                <div class="logo">
-                                    <a href="index"><img loading="lazy" src="newassets/images/Logo.png" alt="imb Pay Logo"></a>
-                                </div>
-                                <div class="footer-social">
-                                    <ul class="list-wrap">
-                                        <li><a href="https://wa.me/919876543210" target="_blank">
-                                                <svg class="icon-primary" xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                                                    fill="grey" viewBox="0 0 448 512">
-                                                    <path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7 .9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/>
-                                                </svg>
-                                            </a>
-                                        </li>
-                                        <li><a href="https://wa.me/919876543210" target="_blank">
-                                                <svg class="icon-primary" xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                                                    fill="grey" viewBox="0 0 448 512">
-                                                    <path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7 .9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/>
-                                                </svg>
-                                            </a>
-                                        </li>
-                                        <li><a href="https://wa.me/919876543210" target="_blank">
-                                                <svg class="icon-primary" xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                                                    fill="grey" viewBox="0 0 448 512">
-                                                    <path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7 .9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/>
-                                                </svg>
-                                            </a>
-                                        </li>
-                                        <li><a href="https://wa.me/919876543210" target="_blank">
-                                                <svg class="icon-primary" xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                                                    fill="grey" viewBox="0 0 448 512">
-                                                    <path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7 .9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/>
-                                                </svg>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="footer-contact">
-                                    <span>For Support</span>
-                                    <h2 class="title"><a href="https://wa.me/919876543210" target="_blank">+91 9876543210</a></h2>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-sm-6">
-                            <div class="footer-widget">
-                                <h4 class="fw-title">UPI Gateway</h4>
-                                <div class="fw-link">
-                                    <ul class="list-wrap">
-                                        <li><a href="docs">Documentation</a></li>
-                                        <li><a href="https://codes.download.net.in/product-category/plugins/" target="_blank">SDK Files</a></li>
-                                        <li><a href="demo">Demo</a></li>
-                                        <li><a href="#contact">Contact Us</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-sm-6">
-                            <div class="footer-widget">
-                                <h4 class="fw-title">Account</h4>
-                                <div class="fw-link">
-                                    <ul class="list-wrap">
-                                        <li><a href="merchant/index">Login</a></li>
-                                        <li><a href="merchant/register">Sign UP</a></li>
-                                        <li><a href="#">Reset Password</a></li>
-                                        <li><a href="#contact">Contact Us</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-sm-6">
-                            <div class="footer-widget">
-                                <h4 class="fw-title">About Store</h4>
-                                <div class="footer-about">
-                                    <ul class="list-wrap">
-                                        <li><img loading="lazy" src="newassets/img/icon/phone_icon.svg" alt=""><a
-                                                href="https://wa.me/919876543210">+91 9876543210</a></li>
-                                        <li><img loading="lazy" src="newassets/img/icon/mail_icon.svg" alt=""><a
-                                                href="mailto:admin@imb Pay">admin@pay.garudhub.in</a></li>
-                                        <li><img loading="lazy" src="newassets/img/icon/loction_icon.svg"
-                                                alt=""><span>Delhi, India</span></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <div class="container">
-                    <div class="row align-items-center">
-                        <div class="col-md-6">
-                            <div class="cart-img">
-                                <img loading="lazy" src="newassets/img/digisah_pay-800h.webp" alt=""
-                                    style="height: 24px;">
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="copyright-text text-end">
-                                <p>© 2025 imb Pay Payments API. All Rights Reserved</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
-    <!-- Footer Area End -->
-
-    <!-- JS here -->
-    <script src="newassets/js/jquery-3.6.0.min.js"></script>
-    <script src="newassets/js/bootstrap.min.js"></script>
-    <script src="newassets/js/swiper-bundle.min.js"></script>
-    <script src="newassets/js/slick.min.js"></script>
-    <script src="newassets/js/wow.min.js"></script>
-    <script src="newassets/js/main.js"></script>
-    
-    <script disable-devtool-auto="" src="common/disable-devtool.js" data-url="https://www.google.com/"></script>
-
-</body>
-
-</html>
+<?php include 'imb-footer1.php'; ?>
